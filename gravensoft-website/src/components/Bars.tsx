@@ -37,7 +37,7 @@ export function FooterBar() {
   return (
     <>
       <footer className={`w-full grow flex-col bg-slate-950 text-gray-100 border-t border-gray-500`}>
-        <div className="w-full h-50 bg-slate-950 flex flex-row justify-center gap-24 py-16 mb-16">
+        <div className="w-full h-50 bg-slate-950 flex flex-row justify-center gap-24 py-8 mb-16">
           <p>© 2026 Lovingly made by the GravenSoft Team. All Rights Reserved.</p>
           {
             LinkColumns.map(([title, links]) => (
