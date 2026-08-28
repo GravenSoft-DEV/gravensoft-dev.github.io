@@ -1,1 +1,0 @@
-import{t as e}from"./index-CfcZw7NK.js";var t=e();function n(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(`p`,{children:`Hello`})})}export{n as default};

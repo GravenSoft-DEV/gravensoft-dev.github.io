@@ -1,0 +1,1 @@
+import{t as e}from"./index-CHL9ST4y.js";import{t}from"./PageWrapper-r85qGb5o.js";var n=e();function r(){return(0,n.jsx)(t,{children:(0,n.jsx)(`p`,{})})}export{r as default};
