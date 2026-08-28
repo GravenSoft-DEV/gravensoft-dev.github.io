@@ -1,0 +1,1 @@
+import{t as e}from"./index-0jadKY2I.js";var t=e();function n(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(`p`,{children:`Nothing here but monkeys...`})})}export{n as default};

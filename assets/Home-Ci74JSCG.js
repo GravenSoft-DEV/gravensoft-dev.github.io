@@ -1,0 +1,13 @@
+import{t as e}from"./index-0jadKY2I.js";var t=e();function n({children:e,classOverride:n,borderVisible:r=!0}){return(0,t.jsx)(`div`,{className:`w-full flex flex-col justify-center items-center ${r?`border-b border-gray-500`:null} ${n}`,children:(0,t.jsx)(`div`,{className:`w-full h-full max-w-6xl py-24`,children:e})})}function r({children:e}){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(`div`,{className:`bg-gray-400 rounded-2xl min-h-64`,children:e})})}var i={heroTitle:`Engineering experiences that leave a mark...`,heroSubtitle:`
+in your hearts? in history?
+
+Maybe.
+
+Here at GravenSoft, our team is commmitted to delivering you quality software solutions that scale.`,testTitle:`Lorem Ipsum`,testTest:`dolor sit amet, consectetur adipiscing elit. Quisque vel magna nec nulla sollicitudin consectetur.
+    Donec non nisl ex. Sed sit amet libero sollicitudin, sodales orci sed, malesuada eros.Fusce nibh sapien, tincidunt
+    quis dui a, luctus porta quam. Proin auctor sem non ante scelerisque luctus ac at diam. Integer erat quam, rutrum
+    sed sapien molestie, iaculis scelerisque nisi. Nullam lobortis, neque sed ornare volutpat, nisi erat fringilla orci,
+    ut mollis arcu ligula nec ex. Proin ex neque, vehicula ac molestie et, consectetur ac magna. Interdum et malesuada
+    fames ac ante ipsum primis in faucibus. Etiam sed lobortis metus. Orci varius natoque penatibus et magnis dis parturient
+    montes, nascetur ridiculus mus. Etiam facilisis urna eu purus viverra vestibulum. In eget tortor sed lectus finibus mattis.
+    Nam faucibus tincidunt est at efficitur.`};function a(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(n,{classOverride:`bg-gray-900 min-h-[100svh]`,children:[(0,t.jsx)(`h1`,{className:`text-4xl font-bold`,children:i.heroTitle}),(0,t.jsx)(`p`,{style:{whiteSpace:`pre-line`},children:i.heroSubtitle})]}),(0,t.jsxs)(n,{classOverride:`bg-gray-800`,children:[(0,t.jsx)(`h1`,{className:`text-4xl font-bold mb-8`,children:i.testTitle}),(0,t.jsxs)(`div`,{className:`flex flex-row gap-16`,children:[(0,t.jsx)(`p`,{children:i.testTest}),(0,t.jsx)(r,{children:`KALDHWKJDHLWADHKJADHJHjkd`})]})]}),(0,t.jsxs)(n,{classOverride:`bg-gray-900`,children:[(0,t.jsx)(`h1`,{className:`text-4xl font-bold mb-8`,children:i.testTitle}),(0,t.jsxs)(`div`,{className:`flex flex-row gap-16`,children:[(0,t.jsx)(r,{children:`KALDHWKJDHLWADHKJADHJHjkd`}),(0,t.jsx)(`p`,{children:i.testTest})]})]}),(0,t.jsxs)(n,{classOverride:`bg-gray-800`,borderVisible:!1,children:[(0,t.jsx)(`h1`,{className:`text-4xl font-bold mb-8 text-center`,children:i.testTitle}),(0,t.jsx)(`div`,{className:`flex flex-row gap-16`,children:(0,t.jsx)(`p`,{style:{textAlign:`center`},children:i.testTest})})]})]})}export{a as default};
