@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 //import { useInView } from 'motion/react';
 import { useLocation } from 'react-router-dom';
 
-export function CheckIfRouteActive(path: string) {
+export function IsRouteActive(path: string) {
 	const location = useLocation();
 	return location.pathname === path;
 }
@@ -15,8 +15,7 @@ export function CopyTextToClipboard(text: string) {
 	});
 }
 
-
-export function CheckScrollOnTop() {
+export function ScrollOnTop() {
 	const [isAtTop, setIsAtTop] = useState(true);
 
 	useEffect(() => {
