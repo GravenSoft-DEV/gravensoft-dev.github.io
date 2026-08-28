@@ -1,0 +1,1 @@
+import{t as e}from"./index-BmJH_JRV.js";var t=e();function n(){return(0,t.jsx)(t.Fragment,{children:(0,t.jsx)(`p`,{})})}export{n as default};
