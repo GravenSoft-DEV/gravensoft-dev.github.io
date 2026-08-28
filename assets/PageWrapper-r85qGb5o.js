@@ -1,1 +1,0 @@
-import{n as e,t}from"./index-CHL9ST4y.js";e();var n=t();function r({children:e}){return(0,n.jsx)(n.Fragment,{children:e})}export{r as t};
