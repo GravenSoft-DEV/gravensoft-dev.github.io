@@ -1,0 +1,1 @@
+import{t as e}from"./index-DUPQgKLQ.js";var t=e();function n(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(`title`,{children:`Portfolio | Gravensoft`}),(0,t.jsx)(`p`,{})]})}export{n as default};
