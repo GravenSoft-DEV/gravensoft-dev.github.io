@@ -1,1 +1,0 @@
-import{t as e}from"./index-BPhbWQGR.js";var t=e();function n(){return(0,t.jsxs)(`main`,{children:[(0,t.jsx)(`title`,{children:`Blogs | Gravensoft`}),(0,t.jsx)(`p`,{})]})}export{n as default};
