@@ -3,6 +3,7 @@ import { IsRouteActive } from "../shared/Utils";
 import { LinkColumns } from "../data/hyperlinks"
 import { ROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
+import { Icons } from "../shared/Icons";
 
 interface TabProps {
   children: string;
@@ -57,7 +58,7 @@ export function FooterBar() {
                     target="_blank"
                   >
                     {hyperlink.name}
-                    <div className="h-3 w-3 bg-[url('src/assets/icons/link.svg')] bg-cover bg-center bg-no-repeat"></div>
+                    <div style={{ backgroundImage: `url("${Icons.linkIcon}")` }} className="h-3 w-3 shrink-0 bg-cover bg-center bg-no-repeat"></div>
                   </a>
                 ))}
               </div>
