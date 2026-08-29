@@ -1,9 +1,14 @@
 import type { ReactNode } from "react";
 
-export default function Panel({ children }: {children?: ReactNode}) {
+interface PanelProps {
+    children?: ReactNode;
+    classOverride?: string;
+}
+
+export default function Panel({children, classOverride}: PanelProps) {
   return (
     <>
-      <div className="bg-gray-400 rounded-2xl min-h-64">
+      <div className={`bg-gray-400 rounded-2xl ${classOverride}`}>
         {children}
       </div>
     </>
