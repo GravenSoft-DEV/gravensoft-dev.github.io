@@ -5,8 +5,8 @@ import { HOME } from "../data/routes/home"
 export default function Home() {
   return (
     <>
+      <title>Home | Gravensoft</title>
       <Block classOverride={`relative bg-[rgba(19,13,28,1)] min-h-[100svh]`}>
-        <video src="../assets/background.mp4" className="absolute"></video>
         <h1 className="text-4xl font-bold">{HOME.heroTitle}</h1>
         <p style={{ whiteSpace: 'pre-line' }}>
             {HOME.heroSubtitle}

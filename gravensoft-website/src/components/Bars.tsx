@@ -4,14 +4,14 @@ import { LinkColumns } from "../data/hyperlinks"
 import { ROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
 
-interface LabelProps {
+interface TabProps {
   children: string;
   path: string;
 }
 
-const Label = ({ children, path }: LabelProps) => (
+const Tab = ({ children, path }: TabProps) => (
   <Link to={path}>
-    <span className={`${IsRouteActive(path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ''} ${Colors.textAccentHover} duration-250 transition-all`}>
+    <span className={`${IsRouteActive(path) ? `${Colors.textAccent} ${Colors.glowTextGreen}` : ''} ${Colors.textAccentHover} duration-75 transition-all`}>
       {`${children}`}
     </span>
   </Link>
@@ -26,7 +26,7 @@ export function HeaderBar() {
           <nav className={`flex gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
             {
               ROUTES.filter((route) => route.name && route.path !== "*").map((route) => (
-                <Label key={route.path} path={route.path}>{`${route.name}`}</Label>
+                <Tab key={route.path} path={route.path}>{`${route.name}`}</Tab>
               ))
             }
           </nav>
@@ -40,23 +40,24 @@ export function FooterBar() {
   return (
     <>
       <footer className="w-full h-auto grow flex-col bg-[rgba(29,25,36,0.5)] text-gray-100 border-t border-gray-500">
-        <div className="w-full flex flex-col not-lg:items-center lg:flex-row lg:justify-center gap-24 px-8 lg:px-0 py-16">
+        <div className="w-full flex flex-col not-lg:items-center lg:flex-row lg:justify-center gap-12 lg:gap-24 px-8 lg:px-0 py-12 lg:py-16">
           <p style={{ textAlign: "center" }}>
             © 2026 Lovingly made by the GravenSoft Team. All Rights Reserved.
           </p>
-          <div className="flex flex-row gap-16 lg:gap-24">
+          <div className="flex flex-row gap-24 not-lg:w-full not-lg:justify-between not-lg:max-w-md">
             {LinkColumns.map(([title, links]) => (
               <div key={title} className="flex flex-col gap-2">
                 <span className="font-bold">{title}</span>
                 {links.map((hyperlink) => (
                   <a
                     key={hyperlink.link}
-                    className="duration-75 hover:translate-x-1 text-purple-300 hover:text-white"
+                    className="duration-75 hover:translate-x-1 text-purple-300 hover:text-white flex flex-row items-center gap-2"
                     href={hyperlink.link}
                     rel="noreferrer noopener"
                     target="_blank"
                   >
                     {hyperlink.name}
+                    <div className="h-3 w-3 bg-[url('src/assets/icons/link.svg')] bg-cover bg-center bg-no-repeat"></div>
                   </a>
                 ))}
               </div>
