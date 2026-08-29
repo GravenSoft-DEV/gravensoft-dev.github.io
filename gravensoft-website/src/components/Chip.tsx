@@ -1,0 +1,26 @@
+import type { ReactNode } from "react";
+
+const colorMap = {
+  red: 'border-red-400 text-grey-100 bg-red-500/25',
+  blue: 'border-blue-400 text-grey-100 bg-blue-500/25',
+  green: 'border-green-400 text-grey-100 bg-green-500/25',
+  gray: 'border-gray-400 text-grey-100 bg-gray-500/25',
+};
+
+type ChipColor = keyof typeof colorMap;
+
+interface ChipSchema {
+    children?: ReactNode;
+    classOverride?: string;
+    colorOverride?: ChipColor;
+}
+
+export default function Chip({children, classOverride, colorOverride = "gray"}: ChipSchema) {
+    const colorClass = colorMap[colorOverride] || colorMap.gray;
+    return (
+        <div className={`border rounded-full flex justify-center w-fit px-2 pr-3 gap-2 ${colorClass} ${classOverride} items-center`}>
+            <div className={`border w-2 h-2 rounded-full ${colorClass}`}></div>
+            {children}
+        </div>
+    );
+}

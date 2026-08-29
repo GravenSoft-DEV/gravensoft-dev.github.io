@@ -26,8 +26,8 @@ export function HeaderBar() {
           <p className="font-bold">GravenSoft</p>
           <nav className={`flex gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
             {
-              ROUTES.filter((route) => route.name && route.path !== "*").map((route) => (
-                <Tab key={route.path} path={route.path}>{`${route.name}`}</Tab>
+              ROUTES.filter((route) => route.name && route.path !== "*").map((route, index) => (
+                <Tab key={route.path || `route-${index}`} path={route.path}>{`${route.name}`}</Tab>
               ))
             }
           </nav>
@@ -49,9 +49,9 @@ export function FooterBar() {
             {LinkColumns.map(([title, links]) => (
               <div key={title} className="flex flex-col gap-2">
                 <span className="font-bold">{title}</span>
-                {links.map((hyperlink) => (
+                {links.map((hyperlink, index) => (
                   <a
-                    key={hyperlink.link}
+                    key={`${hyperlink.link}-${index}`}
                     className="duration-75 hover:translate-x-1 text-purple-300 hover:text-white flex flex-row items-center gap-2"
                     href={hyperlink.link}
                     rel="noreferrer noopener"
