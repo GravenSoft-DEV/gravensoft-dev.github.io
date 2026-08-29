@@ -6,14 +6,15 @@ const Blogs = lazy(() => import('../routes/Blogs'));
 const Home = lazy(() => import('../routes/Home'));
 
 export interface RouteMeta {
-    name: string;
+    name?: string;
+    path: string;
     route?: LazyExoticComponent<ComponentType<any>>
 }
 
 export const ROUTES: RouteMeta[] = [
-    {name: "", route: Home},
-    {name: "/home", route: Home},
-    {name: "/portfolio", route: Portfolio},
-    {name: "/blogs", route: Blogs},
-    {name: "*", route: NotFound},
+    {path: "", route: Home},
+    {name: "Home", path: "/home", route: Home},
+    {name: "Portfolio", path: "/portfolio", route: Portfolio},
+    {name: "Blogs", path: "/blogs", route: Blogs},
+    {name: "Page Not Found", path: "*", route: NotFound},
 ]

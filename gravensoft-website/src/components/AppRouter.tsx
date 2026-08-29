@@ -9,7 +9,7 @@ export function AppRouter() {
   return (
     <Routes location={location} key={location.pathname}>
       { ROUTES.map((route: RouteMeta) => {
-        if (route.name === "") {
+        if (route.path === "") {
           return (
             <Route 
               key="root-redirect"
@@ -23,8 +23,8 @@ export function AppRouter() {
 
         return (
           <Route
-            key={route.name}
-            path={route.name}
+            key={route.path}
+            path={route.path}
             element={
               Component ? (
                 <Suspense fallback={<PageLoader />}>

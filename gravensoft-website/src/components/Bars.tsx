@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { IsRouteActive } from "../shared/Utils";
 import { LinkColumns } from "../data/hyperlinks"
+import { ROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
 
 interface LabelProps {
@@ -19,13 +20,15 @@ const Label = ({ children, path }: LabelProps) => (
 export function HeaderBar() {
   return (
     <>
-      <header className={`w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex bg-slate-900 text-gray-100 border-b border-gray-500`}>
-        <div className="w-full py-8 flex justify-between items-center max-w-6xl">
-          GravenSoft
+      <header className={`w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex bg-[rgba(29,25,36,0.5)] text-gray-100 border-b border-gray-500 backdrop-blur-md`}>
+        <div className="w-full py-8 flex justify-between items-center px-8 xl:px-0 md:max-w-6xl">
+          <p className="font-bold">GravenSoft</p>
           <nav className={`flex gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
-            <Label path="/home">Home</Label>
-            <Label path="/portfolio">Portfolio</Label>
-            <Label path="/blogs">Blogs</Label>
+            {
+              ROUTES.filter((route) => route.name && route.path !== "*").map((route) => (
+                <Label key={route.path} path={route.path}>{`${route.name}`}</Label>
+              ))
+            }
           </nav>
         </div>
       </header>
@@ -36,22 +39,29 @@ export function HeaderBar() {
 export function FooterBar() {
   return (
     <>
-      <footer className={`w-full grow flex-col bg-slate-950 text-gray-100 border-t border-gray-500`}>
-        <div className="w-full h-50 bg-slate-950 flex flex-row justify-center gap-24 py-8 mb-16">
-          <p>© 2026 Lovingly made by the GravenSoft Team. All Rights Reserved.</p>
-          {
-            LinkColumns.map(([title, links]) => (
-              <div className="flex flex-col">
-                <b>{title}</b>
-                <br></br>
-                {
-                  links.map((hyperlink) => (
-                    <a href={`${hyperlink.link}`} rel="noreferrer noopenner" target="_blank">{hyperlink.name}</a>
-                  ))
-                }
+      <footer className="w-full h-auto grow flex-col bg-[rgba(29,25,36,0.5)] text-gray-100 border-t border-gray-500">
+        <div className="w-full flex flex-col not-lg:items-center lg:flex-row lg:justify-center gap-24 px-8 lg:px-0 py-16">
+          <p style={{ textAlign: "center" }}>
+            © 2026 Lovingly made by the GravenSoft Team. All Rights Reserved.
+          </p>
+          <div className="flex flex-row gap-16 lg:gap-24">
+            {LinkColumns.map(([title, links]) => (
+              <div key={title} className="flex flex-col gap-2">
+                <span className="font-bold">{title}</span>
+                {links.map((hyperlink) => (
+                  <a
+                    key={hyperlink.link}
+                    className="duration-75 hover:translate-x-1 text-purple-300 hover:text-white"
+                    href={hyperlink.link}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    {hyperlink.name}
+                  </a>
+                ))}
               </div>
-            ))
-          }
+            ))}
+          </div>
         </div>
       </footer>
     </>
