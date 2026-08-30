@@ -16,7 +16,7 @@ export const LEGAL: HyperlinkSchema[] = [
 export const NAVIGATE: HyperlinkSchema[] = [
     {name: "Home", link: "/home", isRoute: true},
     {name: "Portfolio", link: "/portfolio", isRoute: true},
-    {name: "Blogs", link: "/blogs", isRoute: true},
+    {name: "Blog", link: "/blogs", isRoute: true},
 ]
 
 export const SOCIALS: HyperlinkSchema[] = [

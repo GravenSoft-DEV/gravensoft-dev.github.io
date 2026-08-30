@@ -31,14 +31,16 @@ export function AppRouter() {
         })}
       </Route>
 
-      <Route
-        path="*"
-        element={
-          <Suspense fallback={<PageLoader />}>
-            <NotFound />
-          </Suspense>
-        }
-      />
+      <Route element={ <DefaultLayout /> } >
+        <Route
+          path={'*'}
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <NotFound />
+            </Suspense>
+          }
+        />
+      </Route>
     </Routes>
   );
 }

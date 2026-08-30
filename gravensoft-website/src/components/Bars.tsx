@@ -4,6 +4,7 @@ import { LinkColumns, type HyperlinkSchema } from "../data/hyperlinks"
 import { HEADERROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
 import { TextHyperlink } from "./Hyperlinks";
+import Button from "./Buttons";
 
 interface TabProps {
   children: string;
@@ -30,6 +31,7 @@ export function Header() {
             ))
           }
         </nav>
+        <Button href="/contact">Contact</Button>
       </div>
     </header>
   );
