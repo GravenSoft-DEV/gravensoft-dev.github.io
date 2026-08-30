@@ -23,7 +23,7 @@ export function Header() {
     <header className={`w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex bg-[rgba(29,25,36,0.5)] text-gray-100 border-b border-gray-500 backdrop-blur-md`}>
       <div className="w-full py-8 flex justify-between items-center px-8 xl:px-0 md:max-w-6xl">
         <p className="font-bold">GravenSoft</p>
-        <nav className={`flex gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
+        <nav className={`flex flex-row gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
           {
             HEADERROUTES.map((route, index) => (
               <Tab key={route.path || `route-${index}`} path={route.path}>{`${route.name}`}</Tab>
@@ -39,7 +39,7 @@ export function Footer() {
   const ColumnLinks = (links: HyperlinkSchema[], classOverride: string, showTitle: boolean = false, title?: string) => {
     return (
       <div key={title} className={`${classOverride} flex flex-wrap not-sm:justify-center`}>
-        { showTitle ? <span className="font-bold w-full text-center">{title}</span> : null}
+        { showTitle ? <span className="font-bold w-full not-sm:text-center">{title}</span> : null}
         { links.map((hyperlink, index) => {
           return (
             <TextHyperlink showHyperlinkIcon={title != null && hyperlink.icon == null} key={`${hyperlink.link}-${index}`} name={hyperlink.name} link={hyperlink.link} icon={hyperlink.icon} isRoute={hyperlink.isRoute}/>
@@ -50,7 +50,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="w-full h-auto grow flex-col bg-[#110f16] text-gray-100 border-t border-gray-500">
+    <footer className="w-full h-auto grow flex flex-col items-center bg-[#110f16] text-gray-100 border-t border-gray-500">
       <section className="w-full flex flex-col lg:flex-row not-lg:items-center mx-auto justify-between lg:max-w-6xl gap-12 lg:gap-24 px-8 xl:px-0 py-8 lg:py-8">
         <p style={{ textAlign: "center" }}> Made with 🤍 by the GravenSoft Team! </p>
         <div className="flex flex-col sm:flex-row gap-8 not-sm:items-center sm:gap-24 lg:px-0 not-lg:w-full not-lg:justify-between not-lg:max-w-md">
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
       </section>
 
-      <hr className="border-gray-800"/>
+      <hr className="border-gray-800 w-full max-w-6xl"/>
       
       <section className="w-full flex flex-col md:flex-row not-lg:items-center mx-auto justify-between lg:max-w-6xl gap-4 lg:gap-24 px-8 xl:px-0 py-8">
         <p style={{ textAlign: "center" }}> © 2026 GravenSoft LLC. All Rights Reserved. </p>

@@ -71,13 +71,13 @@ export default function Home() {
         </div>
       </Block>
       <Block classOverride={`bg-[rgba(19,13,28,1)]`}>
-        <div className="flex flex-col lg:flex-row gap-8 justify-between items-center">
-          <HoverPanel classOverride="transition-all min-w-xs min-h-100 bg-linear-to-br border-1 border-green-500 from-green-800/50 to-75% to-green-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-green-300/50 hover:shadow-xl hover:from-green-800/50 to-75% hover:to-green-300/50">Basic</HoverPanel>
-          <HoverPanel classOverride="transition-all min-w-xs min-h-110 bg-linear-to-br border-1 border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-yellow-200/50 hover:shadow-xl hover:from-yellow-800/50 to-75% hover:to-yellow-200/50">Premium</HoverPanel>
-          <HoverPanel classOverride="transition-all min-w-xs min-h-100 bg-linear-to-br border-1 border-red-500 from-red-800/50 to-75% to-red-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-red-300/50 hover:shadow-xl hover:from-red-800/50 to-75% hover:to-red-300/50">Pro</HoverPanel>
+        <div className="flex flex-wrap xl:flex-row gap-8 justify-center items-center">
+          <HoverPanel classOverride="not-md:w-full not-xl:order-1 transition-all min-w-xs min-h-100 bg-linear-to-br border-1 border-green-500 from-green-800/50 to-75% to-green-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-green-300/50 hover:shadow-xl hover:from-green-800/50 to-75% hover:to-green-300/50">Basic</HoverPanel>
+          <HoverPanel classOverride="not-md:w-full not-xl:order-3 transition-all min-w-xs min-h-110 bg-linear-to-br border-1 border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-yellow-200/50 hover:shadow-xl hover:from-yellow-800/50 to-75% hover:to-yellow-200/50">Premium</HoverPanel>
+          <HoverPanel classOverride="not-md:w-full not-xl:order-2 transition-all min-w-xs min-h-100 bg-linear-to-br border-1 border-red-500 from-red-800/50 to-75% to-red-400/50" translate={true} highlight={true} highlightOverride="hover:shadow-red-300/50 hover:shadow-xl hover:from-red-800/50 to-75% hover:to-red-300/50">Pro</HoverPanel>
         </div>
       </Block>
-      <Block classOverride={`bg-[rgba(69,60,82,1)]`} borderVisible={false}>
+      <Block classOverride={`bg-[rgba(69,60,82,1)]`}>
         <div className="relative w-screen left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
           <Marquee pauseOnHover={true} className="w-full">
             <div className="flex">
