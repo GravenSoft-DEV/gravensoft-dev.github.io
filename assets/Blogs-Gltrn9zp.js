@@ -1,1 +1,0 @@
-import{t as e}from"./index-NL9-j29k.js";var t=e();function n(){return(0,t.jsxs)(`main`,{children:[(0,t.jsx)(`title`,{children:`Blogs | Gravensoft`}),(0,t.jsx)(`div`,{className:`h-16`}),(0,t.jsx)(`p`,{})]})}export{n as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./index-yT8OijgY.js";var t=e();function n(){return(0,t.jsxs)(`main`,{children:[(0,t.jsx)(`title`,{children:`Contact | GravenSoft`}),(0,t.jsx)(`div`,{className:`h-16`}),(0,t.jsx)(`p`,{})]})}export{n as default};

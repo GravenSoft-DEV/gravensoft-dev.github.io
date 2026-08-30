@@ -1,1 +1,0 @@
-import{t as e}from"./index-NL9-j29k.js";var t=e();function n({children:e,classOverride:n,borderVisible:r=!0}){return(0,t.jsx)(`section`,{className:`w-full flex flex-col justify-center items-center ${r?`border-b border-gray-500`:``} ${n}`,children:(0,t.jsx)(`div`,{className:`w-full h-full max-w-6xl py-16 sm:py-24 px-8 xl:px-0`,children:e})})}export{n as t};
