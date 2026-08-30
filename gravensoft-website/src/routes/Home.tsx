@@ -10,7 +10,7 @@ const Marquee = (MarqueeModule as any).default || MarqueeModule;
 export default function Home() {
   return (
     <main>
-      <title>Home | Gravensoft</title>
+      <title>Home | GravenSoft</title>
       <Block classOverride={`relative bg-[rgba(19,13,28,1)] min-h-[100svh]`}>
         <div className="relative z-10 text-white mix-blend-difference">
           <h1 className="text-4xl font-bold ">{HOME.heroTitle}</h1>

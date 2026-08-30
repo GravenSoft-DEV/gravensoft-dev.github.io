@@ -3,6 +3,7 @@ import { lazy, type ComponentType, type LazyExoticComponent } from 'react';
 const NotFound = lazy(() => import('../routes/404'));
 const Portfolio = lazy(() => import('../routes/Portfolio'));
 const Blogs = lazy(() => import('../routes/Blogs'));
+const Contact = lazy(() => import('../routes/Contact'));
 const Home = lazy(() => import('../routes/Home'));
 
 export interface RouteMeta {
@@ -14,7 +15,14 @@ export interface RouteMeta {
 export const ROUTES: RouteMeta[] = [
     {path: "", route: Home},
     {name: "Home", path: "/home", route: Home},
+    {name: "Contact", path: "/contact", route: Contact},
     {name: "Portfolio", path: "/portfolio", route: Portfolio},
     {name: "Blogs", path: "/blogs", route: Blogs},
     {name: "Page Not Found", path: "*", route: NotFound},
+]
+
+export const HEADERROUTES: RouteMeta[] = [
+    {name: "Home", path: "/home", route: Home},
+    {name: "Portfolio", path: "/portfolio", route: Portfolio},
+    {name: "Blogs", path: "/blogs", route: Blogs},
 ]

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { IsRouteActive } from "../shared/Utils";
-import { LinkColumns } from "../data/hyperlinks"
-import { ROUTES } from "../data/routes";
+import { LinkColumns, type HyperlinkSchema } from "../data/hyperlinks"
+import { HEADERROUTES } from "../data/routes";
 import Colors from "../shared/Colors";
-import { Icons } from "../shared/Icons";
+import { TextHyperlink } from "./Hyperlinks";
 
 interface TabProps {
   children: string;
@@ -26,7 +26,7 @@ export function HeaderBar() {
           <p className="font-bold">GravenSoft</p>
           <nav className={`flex gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
             {
-              ROUTES.filter((route) => route.name && route.path !== "*").map((route, index) => (
+              HEADERROUTES.map((route, index) => (
                 <Tab key={route.path || `route-${index}`} path={route.path}>{`${route.name}`}</Tab>
               ))
             }
@@ -38,31 +38,37 @@ export function HeaderBar() {
 }
 
 export function FooterBar() {
+  function getLinks(links: HyperlinkSchema[], classOverride: string, showTitle: boolean = false, title?: string) {
+    return (
+      <div key={title} className={classOverride}>
+        { showTitle ? <span className="font-bold">{title}</span> : null}
+        { links.map((hyperlink, index) => {
+          return (
+            <TextHyperlink key={`${hyperlink.link}-${index}`} name={hyperlink.name} link={hyperlink.link} icon={hyperlink.icon} isRoute={hyperlink.isRoute}/>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <>
       <footer className="w-full h-auto grow flex-col bg-[rgba(29,25,36,0.5)] text-gray-100 border-t border-gray-500">
-        <div className="w-full flex flex-col not-lg:items-center lg:flex-row lg:justify-center gap-12 lg:gap-24 px-8 lg:px-0 py-12 lg:py-16">
+        <div className="w-full flex flex-col lg:flex-row not-lg:items-center mx-auto justify-between lg:max-w-6xl gap-12 lg:gap-24 px-8 lg:px-8 py-8 lg:py-8">
           <p style={{ textAlign: "center" }}>
-            © 2026 Lovingly made by the GravenSoft Team. All Rights Reserved.
+            Made with 🤍 by the GravenSoft Team!
           </p>
-          <div className="flex flex-row gap-24 not-lg:w-full not-lg:justify-between not-lg:max-w-md">
-            {LinkColumns.map(([title, links]) => (
-              <div key={title} className="flex flex-col gap-2">
-                <span className="font-bold">{title}</span>
-                {links.map((hyperlink, index) => (
-                  <a
-                    key={`${hyperlink.link}-${index}`}
-                    className="duration-75 hover:translate-x-1 text-purple-300 hover:text-white flex flex-row items-center gap-2"
-                    href={hyperlink.link}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {hyperlink.name}
-                    <div style={{ backgroundImage: `url("${Icons.linkIcon}")` }} className="h-3 w-3 shrink-0 bg-cover bg-center bg-no-repeat"></div>
-                  </a>
-                ))}
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 lg:px-0 not-lg:w-full not-lg:justify-between not-lg:max-w-md">
+            { LinkColumns.filter( ([title]) => (title !== "Legal") ).map( ([title, links]) => (getLinks(links, "flex flex-col gap-2", true, title)) ) }
+          </div>
+        </div>
+        <hr className="border-gray-800"/>
+        <div className="w-full flex flex-col md:flex-row not-lg:items-center mx-auto justify-between lg:max-w-6xl gap-4 lg:gap-24 px-8 lg:px-8 py-4 lg:py-8">
+          <p style={{ textAlign: "center" }}>
+            © 2026 GravenSoft LLC. All Rights Reserved.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 not-md:w-full not-md:justify-between not-lg:max-w-md not-md:mx-auto">
+            { LinkColumns.filter( ([title]) => (title == "Legal") ).map( ([, links]) => (getLinks(links, "flex flex-row gap-8 justify-around mx-auto")) ) }
           </div>
         </div>
       </footer>
