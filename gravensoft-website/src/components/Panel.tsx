@@ -5,7 +5,7 @@ interface PanelProps {
     classOverride?: string;
 }
 
-interface HoverProps extends PanelProps {
+interface HoverableProps {
     translate?: boolean;
     highlight?: boolean;
     translateOverride?: string;
@@ -20,13 +20,10 @@ export function Panel({children, classOverride='bg-gray-400'}: PanelProps) {
   );
 }
 
-export function HoverPanel(
-    { children,
-      classOverride,
-      translate,
-      highlight,
-      translateOverride = 'hover:-translate-y-4',
-      highlightOverride }: HoverProps) {
+export function HoverPanel({ ...props }: PanelProps & HoverableProps) {
+  const { children, classOverride } = props;
+  const { translate, highlight, translateOverride = 'hover:-translate-y-4', highlightOverride } = props;
+
   return (
     <Panel classOverride={`${translate ? translateOverride : ''} ${highlight ? highlightOverride : ''} duration-75 ${classOverride}`}>{children}</Panel>
   );

@@ -1,3 +1,5 @@
+import { Icons } from "../shared/Icons";
+
 export interface HyperlinkSchema {
     name: string;
     link: string;
@@ -18,10 +20,10 @@ export const NAVIGATE: HyperlinkSchema[] = [
 ]
 
 export const SOCIALS: HyperlinkSchema[] = [
-    {name: "Twitter", link: "https://twitter.com/GravenSoft", isRoute: false},
-    {name: "LinkedIn", link: "https://linkedin.com/company/GravenSoft", isRoute: false},
-    {name: "GitHub", link: "https://github.com/GravenSoft-DEV", isRoute: false},
-    {name: "Discord", link: "https://discord.gg/qJp2ByQZq4", isRoute: false},
+    {name: "Twitter", link: "https://twitter.com/GravenSoft", icon: Icons.twitterIcon, isRoute: false},
+    {name: "LinkedIn", link: "https://linkedin.com/company/GravenSoft", icon: Icons.linkedInIcon, isRoute: false},
+    {name: "GitHub", link: "https://github.com/GravenSoft-DEV", icon: Icons.githubIcon, isRoute: false},
+    {name: "Discord", link: "https://discord.gg/qJp2ByQZq4", icon: Icons.discordIcon, isRoute: false},
 ]
 
 export const LinkColumns: [title: string, HyperlinkSchema[]][] = [
