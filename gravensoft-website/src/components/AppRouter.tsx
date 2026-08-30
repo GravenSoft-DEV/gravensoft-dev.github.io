@@ -1,40 +1,44 @@
-import { Suspense } from 'react';
-import { PageLoader } from './PageLoader.tsx';
-import { ROUTES, type RouteMeta } from '../data/routes.ts'
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+// src/components/AppRouter.tsx
+import { Suspense, lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { PageLoader } from './PageLoader';
+import { ROUTES, type RouteMeta } from '../data/routes';
+import DefaultLayout from './DefaultLayout';
+
+const NotFound = lazy(() => import('../routes/404'));
 
 export function AppRouter() {
-  const location = useLocation();
-
   return (
-    <Routes location={location} key={location.pathname}>
-      { ROUTES.map((route: RouteMeta) => {
-        if (route.path === "") {
+    <Routes>
+      <Route path="/" element={<Navigate to="/home" replace />} />
+
+      <Route element={<DefaultLayout />}>
+        {ROUTES.filter((r) => r.path !== '' && r.path !== '*').map((route: RouteMeta) => {
+          const Component = route.route;
           return (
-            <Route 
-              key="root-redirect"
-              path="" 
-              element={<Navigate to="/home" replace />} 
+            <Route
+              key={route.path}
+              path={route.path}
+              element={
+                Component ? (
+                  <Suspense fallback={<PageLoader />}>
+                    <Component />
+                  </Suspense>
+                ) : null
+              }
             />
           );
+        })}
+      </Route>
+
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={<PageLoader />}>
+            <NotFound />
+          </Suspense>
         }
-
-        const Component = route.route;
-
-        return (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={
-              Component ? (
-                <Suspense fallback={<PageLoader />}>
-                  <Component />
-                </Suspense>
-              ) : null
-            }
-          />
-        );
-      })}
+      />
     </Routes>
   );
 }
