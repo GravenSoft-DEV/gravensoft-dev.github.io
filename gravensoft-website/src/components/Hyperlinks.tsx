@@ -9,11 +9,11 @@ export function TextHyperlink({
     
     const { name, link, icon, isRoute } = hyperlinkProps;
     
-    const className = "duration-75 hover:translate-x-1 text-purple-300 hover:text-white flex flex-row items-center gap-2";
+    const className = "duration-75 not-sm:hover:-translate-y-1 sm:hover:translate-x-1 text-purple-300 hover:text-white flex flex-row items-center gap-2";
         const linkInner = (
             <>
-                {icon ? <div style={{ backgroundImage: `url("${icon}")` }} className="h-4 w-4 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert"/> : null}
-                {name}
+                {icon ? <div style={{ backgroundImage: `url("${icon}")` }} className={`h-8 w-8 sm:h-4 sm:w-4 shrink-0 bg-cover bg-center bg-no-repeat brightness-0 invert-75 sm:brightness-0 sm:invert hover:brightness-0 hover:invert`}/> : null}
+                <p className={icon != null ? `hidden sm:block` : ''}>{name}</p>
                 {showHyperlinkIcon ? <div style={{ backgroundImage: `url("${Icons.linkIcon}")` }} className="h-3 w-3 shrink-0 bg-cover bg-center bg-no-repeat"/> : null}
             </>
         );
