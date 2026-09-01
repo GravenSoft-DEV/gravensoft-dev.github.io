@@ -1,0 +1,1 @@
+import{a as e}from"./index-QvBGS3sH.js";import{t}from"./Block-b7UNcJB-.js";var n=e();function r(){return(0,n.jsx)(`main`,{children:(0,n.jsx)(t,{className:`bg-[rgba(19,13,28,1)] min-h-[100svh]`})})}export{r as default};
