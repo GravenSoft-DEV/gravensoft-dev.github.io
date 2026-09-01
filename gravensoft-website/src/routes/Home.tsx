@@ -24,8 +24,8 @@ export default function Home() {
             {HOME.heroSubtitle}
           </p>
           <div className="flex flex-wrap mt-16 gap-4 w-full justify-center md:justify-start">
-            <Button className="transition-transform origin-center hover:scale-90 w-full sm:w-fit h-16 px-8 rounded-xl bg-white text-black font-bold hover:bg-zinc-950 hover:text-white" href="/contact"><p>Build with Us</p></Button>
-            <Button className="transition-transform origin-center hover:scale-90 w-full sm:w-fit h-16 px-8 rounded-xl border border-white bg-white/20 text-white font-bold hover:bg-white hover:text-black" href="/portfolio"><p>Portfolio</p></Button>
+            <Button className="transition-transform origin-center hover:scale-95 w-full sm:w-fit h-16 px-8 rounded-xl bg-white text-black font-bold hover:bg-zinc-950 hover:text-white" href="/contact"><p>Build with Us</p></Button>
+            <Button className="transition-transform origin-center hover:scale-95 w-full sm:w-fit h-16 px-8 rounded-xl border border-white bg-white/20 text-white font-bold hover:bg-white hover:text-black" href="/portfolio"><p>Portfolio</p></Button>
           </div>
         </div>
       </Hero>

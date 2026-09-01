@@ -34,7 +34,7 @@ export function Header() {
             ))
           }
         </nav>
-        <HoverableElement className="hidden sm:flex rounded-3xl duration-200 transition-all bg-white text-zinc-900" translateOverride="hover:-translate-y-0.5 origin-center hover:scale-95" highlight={true} highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)]">
+        <HoverableElement className="hidden sm:flex rounded-3xl duration-200 transition-all bg-white text-zinc-900" translateOverride="hover:-translate-y-0.5" highlight={true} highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)]">
           {(hoverClasses) => (
             <Magnetic>
               <Button className={`${hoverClasses} font-bold`} href="/contact">Contact</Button>
