@@ -8,7 +8,6 @@ import MarqueeModule from "react-fast-marquee";
 import Button from "../components/Buttons";
 import Hero from "../components/Hero";
 import { useDocumentTitle } from "../shared/Utils";
-import { Magnetic } from "../components/motion-primitives/magnetic";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export default function Home() {
