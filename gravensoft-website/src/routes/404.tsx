@@ -1,9 +1,10 @@
 import Block from "../components/Block";
+import { useDocumentTitle } from "../shared/Utils";
 
 export default function NotFound() {
+  useDocumentTitle(`Page Not Found | GravenSoft`);
   return (
     <main>
-      <title>Page not found! | GravenSoft</title>
       <div className='h-16' />
       <Block className={`relative bg-black min-h-[50svh]`}>
         <h1 className="text-4xl font-bold">Nothing here but us</h1>

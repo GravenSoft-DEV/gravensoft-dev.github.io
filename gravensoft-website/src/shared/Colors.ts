@@ -34,6 +34,6 @@ const Colors = {
 
     bgBase: "bg-purple-950",
     borderAccent: "border-purple-400/80"
-}
+} as const;
 
 export default Colors;

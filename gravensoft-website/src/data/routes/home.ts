@@ -1,5 +1,5 @@
 export const HOME = {
-    heroTitle: `Engineering experiences that leave a mark...`,
+    heroTitle: `Engineering experiences that leave a mark`,
     heroSubtitle: `in your hearts? Maybe. Here at GravenSoft, our team is committed to delivering you quality software solutions that scale.`,
     testTitle: `Lorem Ipsum`,
     testTest: `dolor sit amet, consectetur adipiscing elit. Quisque vel magna nec nulla sollicitudin consectetur.
@@ -10,4 +10,4 @@ export const HOME = {
     fames ac ante ipsum primis in faucibus. Etiam sed lobortis metus. Orci varius natoque penatibus et magnis dis parturient
     montes, nascetur ridiculus mus. Etiam facilisis urna eu purus viverra vestibulum. In eget tortor sed lectus finibus mattis.
     Nam faucibus tincidunt est at efficitur.`
-}
+} as const;

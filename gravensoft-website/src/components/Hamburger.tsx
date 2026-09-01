@@ -11,9 +11,12 @@ export default function Hamburger( { className }: HamburgerProps) {
     const toggle = () => setIsOn((prev:boolean) => !prev);
 
     return (
-        <div className={`cursor-pointer w-8 h-8 flex justify-center items-center select-none ${className}`} onClick={toggle}>
-            <p>{isOn ? "Yes" : "No" }</p>
-        </div>
+        <>
+            <div className={`cursor-pointer w-8 h-8 flex justify-center items-center select-none ${className}`} onClick={toggle}>
+                <p>{isOn ? "Yes" : "No" }</p>
+            </div>
+            
+        </>
     );
 }
 

@@ -4,8 +4,11 @@ import Block from '../components/Block';
 import { HoverableElement, Panel } from '../components/Panel';
 import Chip from '../components/Chip';
 import { BLOG_POSTS } from '../data/blogs';
+import { useDocumentTitle } from '../shared/Utils';
 
 export default function Blog() {
+  useDocumentTitle(`Blog | GravenSoft`);
+  
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
   const availableTags = useMemo(() => {
@@ -13,20 +16,22 @@ export default function Blog() {
     BLOG_POSTS.forEach(post => post.tags.forEach(tag => tags.add(tag)));
     return Array.from(tags).sort();
   }, []);
-
-  const filteredPosts = activeFilter 
-    ? BLOG_POSTS.filter(post => post.tags.includes(activeFilter))
-    : BLOG_POSTS;
+  
+  const filteredPosts = useMemo(() => {
+    return activeFilter 
+      ? BLOG_POSTS.filter(post => post.tags.includes(activeFilter))
+      : BLOG_POSTS;
+  }, [activeFilter]);
 
   return (
     <main>
-      <Block className="bg-black min-h-svh">
+      <Block className="bg-zinc-950 min-h-svh">
         <h1 className="text-4xl font-bold mb-6 text-white">Latest Posts</h1>
         
         <div className="flex flex-wrap gap-3 w-full max-w-3xl">
           <p className='font-bold'>Tags:</p>
           <button onClick={() => setActiveFilter(null)}>
-             <Chip className='transition-all duration-75' colorOverride={activeFilter === null ? 'green' : 'gray'}>
+             <Chip className={`transition-all duration-75`} colorOverride={activeFilter === null ? 'green' : 'gray'}>
                All
              </Chip>
           </button>
@@ -48,18 +53,24 @@ export default function Blog() {
               to={`/blogs/${post.slug}`}
               className="grow w-[calc(50%-1rem)] min-w-70" 
             >
-              <HoverableElement>
+              <HoverableElement
+                translateOverride='hover:translate-x-4 transition-all duration-75'
+                highlight={true}
+                highlightOverride='hover:border-white'
+                >
                 {(hoverClasses) => (
-                <Panel className={`w-full h-full min-h-32 bg-zinc-800 p-6 text-left ${hoverClasses}`}>
-                  <h2 className="text-2xl font-bold4 text-purple-300">{post.title}</h2>
-                  <p className="text-sm text-zinc-400 mb-4">{post.date}</p>
-                  <p className="text-zinc-200 mb-4">{post.excerpt}</p>
-                  
-                  <div className="flex gap-2">
-                    {post.tags.map(tag => (
-                      <Chip key={tag} colorOverride="gray">{tag}</Chip>
-                    ))}
+                <Panel className={`border border-zinc-600 w-full h-full min-h-32 bg-zinc-800/50 text-left ${hoverClasses} flex flex-row justify-between`}>
+                  <div className='p-6'>
+                    <h2 className="text-2xl font-bold text-zinc-100">{post.title}</h2>
+                    <p className="text-sm italic text-zinc-400 mb-4">{post.date}</p>
+                    <p className="text-zinc-200 mb-4">{post.excerpt}</p>
+                    <div className="flex gap-2">
+                      {post.tags.map(tag => (
+                        <Chip key={tag} colorOverride="gray">{tag}</Chip>
+                      ))}
+                    </div>
                   </div>
+                  <img className="w-full max-w-xs aspect-video object-cover rounded-2xl" src={post.thumbnail}></img>
                 </Panel>
                 )}
               </HoverableElement>

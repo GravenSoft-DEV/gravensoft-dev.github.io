@@ -7,9 +7,13 @@ import Chip from "../components/Chip";
 import MarqueeModule from "react-fast-marquee";
 import Button from "../components/Buttons";
 import Hero from "../components/Hero";
+import { useDocumentTitle } from "../shared/Utils";
+import { Magnetic } from "../components/motion-primitives/magnetic";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 export default function Home() {
+  useDocumentTitle(`Home | GravenSoft`);
+
   return (
     <main>
       <Hero className="flex flex-wrap justify-center lg:justify-start lg:max-w-5xl mx-8 lg:mx-0 xl:max-w-7xl gap-16" fade={true} background={
@@ -21,12 +25,12 @@ export default function Home() {
             {HOME.heroSubtitle}
           </p>
           <div className="flex flex-wrap mt-16 gap-4 w-full justify-center md:justify-start">
-            <Button className="w-full sm:w-fit h-16 px-8 rounded-xl bg-white text-black font-bold hover:bg-black hover:text-white" href="/contact"><p>Build with Us</p></Button>
-            <Button className="w-full sm:w-fit h-16 px-8 rounded-xl border border-white bg-white/20 text-white font-bold hover:bg-white hover:text-black" href="/portfolio"><p>Portfolio</p></Button>
+            <Button className="transition-transform origin-center hover:scale-90 w-full sm:w-fit h-16 px-8 rounded-xl bg-white text-black font-bold hover:bg-zinc-950 hover:text-white" href="/contact"><p>Build with Us</p></Button>
+            <Button className="transition-transform origin-center hover:scale-90 w-full sm:w-fit h-16 px-8 rounded-xl border border-white bg-white/20 text-white font-bold hover:bg-white hover:text-black" href="/portfolio"><p>Portfolio</p></Button>
           </div>
         </div>
       </Hero>
-      <Block className={`bg-black`}>
+      <Block className={`bg-zinc-950`}>
         <h1 className="text-4xl font-bold mb-8">{HOME.testTitle}</h1>
         <div className="flex flex-col sm:flex-row gap-8 mb-8">
           <p>{HOME.testTest}</p>
@@ -39,7 +43,7 @@ export default function Home() {
           <Chip colorOverride={'gray'}>Test</Chip>
         </div>
       </Block>
-      <Block className={`bg-black`}>
+      <Block className={`bg-zinc-950`}>
         <h1 className="text-4xl font-bold mb-8">{HOME.testTitle}</h1>
         <div className="flex flex-col sm:flex-row gap-8">
           <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
@@ -56,7 +60,7 @@ export default function Home() {
           </p>
         </div>
       </Block>
-      <Block className={`bg-black flex`}>
+      <Block className={`bg-zinc-950 flex`}>
         <div className="flex flex-col sm:flex-row gap-8 mb-24">
           <div className="flex flex-col gap-8">
             <h1 className="text-4xl font-bold">{HOME.testTitle}</h1>

@@ -1,14 +1,5 @@
 import { lazy, type ComponentType, type LazyExoticComponent } from 'react';
 
-const NotFound = lazy(() => import('../routes/404'));
-const Portfolio = lazy(() => import('../routes/Portfolio'));
-const Blog = lazy(() => import('../routes/Blog'));
-const BlogPost = lazy(() => import('../routes/BlogPost'));
-const PrivacyPolicy = lazy(() => import('../routes/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('../routes/TOS'));
-const Contact = lazy(() => import('../routes/Contact'));
-const Home = lazy(() => import('../routes/Home'));
-
 export interface RouteMeta {
     name?: string;
     path: string;
@@ -16,19 +7,19 @@ export interface RouteMeta {
 }
 
 export const ROUTES: RouteMeta[] = [
-    {path: "", route: Home},
-    {name: "Home", path: "/home", route: Home},
-    {name: "Contact", path: "/contact", route: Contact},
-    {name: "Portfolio", path: "/portfolio", route: Portfolio},
-    {name: "Blog", path: "/blogs", route: Blog},
-    {name: "Blog Post", path: "/blogs/:slug", route: BlogPost},
-    {name: "Privacy Policy", path: "/privacy-policy", route: PrivacyPolicy},
-    {name: "Terms of Service", path: "/terms-of-service", route: TermsOfService},
-    {name: "Page Not Found", path: "*", route: NotFound},
+    {path: "", route: lazy(() => import('../routes/Home'))},
+    {name: "Home", path: "/home", route: lazy(() => import('../routes/Home'))},
+    {name: "Contact", path: "/contact", route: lazy(() => import('../routes/Contact'))},
+    {name: "Portfolio", path: "/portfolio", route: lazy(() => import('../routes/Portfolio'))},
+    {name: "Blog", path: "/blogs", route: lazy(() => import('../routes/Blog'))},
+    {name: "Blog Post", path: "/blogs/:slug", route: lazy(() => import('../routes/BlogPost'))},
+    {name: "Privacy Policy", path: "/privacy-policy", route: lazy(() => import('../routes/PrivacyPolicy'))},
+    {name: "Terms of Service", path: "/terms-of-service", route: lazy(() => import('../routes/TOS'))},
+    {name: "Page Not Found", path: "*", route: lazy(() => import('../routes/404'))},
 ]
 
 export const HEADERROUTES: RouteMeta[] = [
-    {name: "Home", path: "/home", route: Home},
-    {name: "Portfolio", path: "/portfolio", route: Portfolio},
-    {name: "Blog", path: "/blogs", route: Blog},
+    {name: "Home", path: "/home", route: lazy(() => import('../routes/Home'))},
+    {name: "Portfolio", path: "/portfolio", route: lazy(() => import('../routes/Portfolio'))},
+    {name: "Blog", path: "/blogs", route: lazy(() => import('../routes/Blog'))},
 ]

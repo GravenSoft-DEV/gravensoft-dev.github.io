@@ -21,7 +21,6 @@ export function AppRouter() {
               element={
                 Component ? (
                   <Suspense fallback={<PageLoader />}>
-                    <title>{`${route.path == '/blogs/*' ? '' : route.name} | GravenSoft`}</title>
                     <Component />
                   </Suspense>
                 ) : null

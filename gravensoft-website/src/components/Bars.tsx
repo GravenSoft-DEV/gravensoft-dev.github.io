@@ -7,6 +7,7 @@ import { TextHyperlink } from "./Hyperlinks";
 import Button from "./Buttons";
 import { HoverableElement } from "./Panel";
 import Hamburger from "./Hamburger";
+import { Magnetic } from "./motion-primitives/magnetic";
 
 interface TabProps {
   children: string;
@@ -23,7 +24,7 @@ const Tab = ({ children, path }: TabProps) => (
 
 export function Header() {
   return (
-    <header className={`w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex bg-zinc-950/75 text-zinc-100 border-b border-zinc-500 backdrop-blur-md`}>
+    <header className={`w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex bg-zinc-950/75 text-zinc-100 border-b border-zinc-700 backdrop-blur-md`}>
       <div className="w-full py-8 flex justify-between items-center px-8 xl:px-0 md:max-w-6xl">
         <p className="font-bold">GravenSoft</p>
         <nav className={`hidden sm:flex flex-row gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
@@ -33,9 +34,11 @@ export function Header() {
             ))
           }
         </nav>
-        <HoverableElement className="hidden sm:flex rounded-3xl duration-200 transition-all bg-white text-zinc-900" translateOverride="hover:-translate-y-0.5" highlight={true} highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)]">
+        <HoverableElement className="hidden sm:flex rounded-3xl duration-200 transition-all bg-white text-zinc-900" translateOverride="hover:-translate-y-0.5 origin-center hover:scale-95" highlight={true} highlightOverride="hover:shadow-[0px_10px_20px_1px_rgba(255,255,255,0.25)]">
           {(hoverClasses) => (
-            <Button className={`${hoverClasses} font-bold`} href="/contact">Contact</Button>
+            <Magnetic>
+              <Button className={`${hoverClasses} font-bold`} href="/contact">Contact</Button>
+            </Magnetic>
           )}
         </HoverableElement>
         <Hamburger className="visible sm:hidden" />
@@ -59,7 +62,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="w-full h-auto grow flex flex-col items-center bg-zinc-950 text-zinc-100 border-t border-zinc-800">
+    <footer className="w-full h-auto grow flex flex-col items-center bg-black text-zinc-100 border-t border-zinc-700">
       <section className="w-full flex flex-col lg:flex-row items-center lg:items-start mx-auto justify-between lg:max-w-6xl gap-12 lg:gap-24 px-8 xl:px-0 py-8 lg:py-8">
         <p style={{ textAlign: "center" }}> Made with 🤍 by the GravenSoft Team! </p>
         <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start sm:gap-24 lg:px-0 w-full justify-around lg:w-fit max-w-md">
