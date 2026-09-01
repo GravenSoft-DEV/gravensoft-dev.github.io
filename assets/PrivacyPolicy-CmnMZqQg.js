@@ -1,1 +1,0 @@
-import{a as e,i as t}from"./index-mAXzKX3i.js";import{t as n}from"./Block-BfQmK7s-.js";var r=e();function i(){return t(`Privacy Policy | GravenSoft`),(0,r.jsx)(`main`,{children:(0,r.jsx)(n,{className:`bg-zinc-950 min-h-svh`})})}export{i as default};
