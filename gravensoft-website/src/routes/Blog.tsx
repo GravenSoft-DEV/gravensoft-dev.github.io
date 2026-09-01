@@ -20,7 +20,7 @@ export default function Blog() {
 
   return (
     <main>
-      <Block className="bg-[rgba(19,13,28,1)] min-h-[100svh]">
+      <Block className="bg-[rgba(19,13,28,1)] min-h-svh">
         <h1 className="text-4xl font-bold mb-6 text-white">Latest Posts</h1>
         
         <div className="flex flex-wrap gap-3 w-full max-w-3xl">

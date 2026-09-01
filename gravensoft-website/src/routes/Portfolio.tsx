@@ -6,7 +6,7 @@ import Block from '../components/Block';
 export default function Portfolio() {
    return (
     <main>
-      <Block className="bg-[rgba(19,13,28,1)] min-h-[100svh]">
+      <Block className="bg-[rgba(19,13,28,1)] min-h-svh">
         <h1 className="text-4xl font-bold mb-6 text-white">Our Work</h1>
         <hr className='border-gray-600 my-8'/>
       </Block>
