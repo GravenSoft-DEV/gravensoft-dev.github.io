@@ -5,7 +5,7 @@ interface HamburgerProps {
     menuId?: string;
 }
 
-export default function Hamburger( {className, menuId}: HamburgerProps) {
+export default function Hamburger( { className }: HamburgerProps) {
     const [ isOn, setIsOn ] = useState(false);
 
     const toggle = () => setIsOn((prev:boolean) => !prev);
@@ -20,7 +20,7 @@ export default function Hamburger( {className, menuId}: HamburgerProps) {
 export function HamburgerMenu() {
     return (
         <div>
-            
+
         </div>
     );
 }
