@@ -27,14 +27,14 @@ export default function BlogPost() {
   return (
     <main>
       <title>{postMeta.title} | GravenSoft</title>
-      <Block className="bg-[rgba(19,13,28,1)] min-h-svh">
+      <Block className="bg-black min-h-svh">
         <article className="prose prose-invert lg:prose-xl max-w-4xl mx-auto w-full">
           <div className='my-10'>
             <Link to="/blogs">Back to Blog</Link>
           </div>
           <h1 className='text-2xl font-bold'>{postMeta.title}</h1>
-          <p className="text-gray-400">Posted on {postMeta.date}</p>
-          <hr className="border-gray-600 my-8" />
+          <p className="text-zinc-400">Posted on {postMeta.date}</p>
+          <hr className="border-zinc-600 my-8" />
           <ReactMarkdown>{content}</ReactMarkdown>
         </article>
       </Block>

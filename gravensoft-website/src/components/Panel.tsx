@@ -15,7 +15,7 @@ interface HoverableProps {
     children: (injectedClasses: string) => JSX.Element;
 }
 
-export function Panel({children, className='bg-gray-400'}: PanelProps) {
+export function Panel({children, className='bg-zinc-400'}: PanelProps) {
   return (
     <div className={`rounded-2xl ${className}`}>
       {children}
@@ -37,7 +37,7 @@ export function HoverableElement(props: HoverableProps) {
     translate = true,
     translateOverride = 'hover:-translate-y-4', 
     highlight = false,
-    highlightOverride = 'hover:bg-gray-100',
+    highlightOverride = 'hover:bg-zinc-100',
     className = '', 
   } = props;
 

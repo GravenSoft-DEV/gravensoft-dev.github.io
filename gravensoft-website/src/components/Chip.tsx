@@ -4,7 +4,7 @@ const colorMap = {
   red: 'border-red-400 text-grey-100 bg-red-500/25',
   blue: 'border-blue-400 text-grey-100 bg-blue-500/25',
   green: 'border-green-400 text-grey-100 bg-green-500/25',
-  gray: 'border-gray-400 text-grey-100 bg-gray-500/25',
+  gray: 'border-zinc-400 text-grey-100 bg-zinc-500/25',
 };
 
 type ChipColor = keyof typeof colorMap;

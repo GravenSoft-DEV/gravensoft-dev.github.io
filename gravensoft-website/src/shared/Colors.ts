@@ -21,7 +21,7 @@ const Colors = {
     textAccent: "text-[#39FF14]",
     textAccentHover: "hover:text-yellow-400",
     textMutedNav: "text-slate-400",
-    textBody: "text-gray-200",
+    textBody: "text-zinc-200",
 
     indicatorPulseGreen: "bg-[#27e844] animate-pulse shadow-[0_0_10px_rgba(57,255,20,1)]",
     indicatorPulseYellow: "bg-[#f2f75c] animate-ping shadow-[0_0_10px_rgba(255,255,0,1)]",

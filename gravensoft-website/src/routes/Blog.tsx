@@ -20,7 +20,7 @@ export default function Blog() {
 
   return (
     <main>
-      <Block className="bg-[rgba(19,13,28,1)] min-h-svh">
+      <Block className="bg-black min-h-svh">
         <h1 className="text-4xl font-bold mb-6 text-white">Latest Posts</h1>
         
         <div className="flex flex-wrap gap-3 w-full max-w-3xl">
@@ -39,7 +39,7 @@ export default function Blog() {
           ))}
         </div>
 
-        <hr className='border-gray-600 my-8'/>
+        <hr className='border-zinc-600 my-8'/>
 
         <div className="flex flex-wrap gap-8 w-full max-w-5xl">
           {filteredPosts.map((post) => (
@@ -50,10 +50,10 @@ export default function Blog() {
             >
               <HoverableElement>
                 {(hoverClasses) => (
-                <Panel className={`w-full h-full min-h-32 bg-gray-800 p-6 text-left ${hoverClasses}`}>
+                <Panel className={`w-full h-full min-h-32 bg-zinc-800 p-6 text-left ${hoverClasses}`}>
                   <h2 className="text-2xl font-bold4 text-purple-300">{post.title}</h2>
-                  <p className="text-sm text-gray-400 mb-4">{post.date}</p>
-                  <p className="text-gray-200 mb-4">{post.excerpt}</p>
+                  <p className="text-sm text-zinc-400 mb-4">{post.date}</p>
+                  <p className="text-zinc-200 mb-4">{post.excerpt}</p>
                   
                   <div className="flex gap-2">
                     {post.tags.map(tag => (
@@ -66,7 +66,7 @@ export default function Blog() {
             </Link>
           ))}
           {filteredPosts.length === 0 && (
-            <p className="text-gray-400">No posts found for this tag.</p>
+            <p className="text-zinc-400">No posts found for this tag.</p>
           )}
         </div>
       </Block>
