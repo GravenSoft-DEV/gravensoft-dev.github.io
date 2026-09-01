@@ -1,0 +1,1 @@
+import{o as e,s as t}from"./index-Cx41wXWG.js";import{t as n}from"./Block-Bx8Br3nx.js";var r=t();function i(){return e(`Terms of Service | GravenSoft`),(0,r.jsx)(`main`,{children:(0,r.jsx)(n,{className:`bg-zinc-950 min-h-svh`})})}export{i as default};
