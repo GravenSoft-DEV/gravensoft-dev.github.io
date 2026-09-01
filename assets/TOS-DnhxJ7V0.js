@@ -1,0 +1,1 @@
+import{a as e}from"./index-BX_lZird.js";import{t}from"./Block-BYnOwkav.js";var n=e();function r(){return(0,n.jsx)(`main`,{children:(0,n.jsx)(t,{className:`bg-black min-h-svh`})})}export{r as default};

@@ -1,0 +1,1 @@
+import{a as e}from"./index-BX_lZird.js";var t=e();function n({id:e,children:n,className:r,borderVisible:i=!0}){return(0,t.jsx)(`section`,{id:e,className:`w-full flex flex-col justify-center items-center ${i?`border-b border-zinc-800`:``} ${r}`,children:(0,t.jsx)(`div`,{className:`w-full h-full max-w-5xl py-12 sm:py-16 px-8 xl:px-0`,children:n})})}export{n as t};
