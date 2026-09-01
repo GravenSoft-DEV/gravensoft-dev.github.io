@@ -1,0 +1,1 @@
+var e=[{thumbnail:``+new URL(`background-BeAvs6CE.webp`,import.meta.url).href,slug:`my-first-post`,title:`Hello, World!`,excerpt:`Testing the blogposts system.`,date:`2026-08-30`,file:`/blogs/my-first-post.md`,tags:[`Test`]}];export{e as t};
