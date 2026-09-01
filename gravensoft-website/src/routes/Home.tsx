@@ -15,7 +15,7 @@ export default function Home() {
       <Hero className="flex flex-wrap justify-center sm:justify-start lg:max-w-5xl mx-4 lg:mx-0 xl:max-w-7xl gap-16" fade={true} background={
         <VideoPlayer url={badApple} containerClassOverride="absolute inset-0 z-0 w-full h-full" loop={true} />
       }>
-        <div className="md:max-w-[45%] md:pl-4 lg:pl-8 xl:px-0">
+        <div className="md:max-w-[45%] md:pl-4 lg:pl-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-center md:text-left">{HOME.heroTitle}</h1>
           <p className='whitespace-pre-line text-center md:text-left'>
             {HOME.heroSubtitle}
