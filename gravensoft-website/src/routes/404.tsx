@@ -5,11 +5,11 @@ export default function NotFound() {
     <main>
       <title>Page not found! | GravenSoft</title>
       <div className='h-16' />
-      <Block classOverride={`relative bg-[rgba(19,13,28,1)]`}>
-        <h1 className="text-4xl font-bold">Nothing here but us.</h1>
-        <p style={{ whiteSpace: 'pre-line' }}>
-          The page you are looking for does not exist.
-        </p>
+      <Block className={`relative bg-[rgba(19,13,28,1)] min-h-[50svh]`}>
+        <h1 className="text-4xl font-bold">Nothing here but us</h1>
+        <p>and these crickets...</p>
+        <br></br>
+        <p>The page you are looking for does not exist!</p>
       </Block>
     </main>
   );

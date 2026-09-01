@@ -1,4 +1,3 @@
-// src/components/AppRouter.tsx
 import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PageLoader } from './PageLoader';
@@ -22,6 +21,7 @@ export function AppRouter() {
               element={
                 Component ? (
                   <Suspense fallback={<PageLoader />}>
+                    <title>{`${route.path == '/blogs/*' ? '' : route.name} | GravenSoft`}</title>
                     <Component />
                   </Suspense>
                 ) : null
@@ -29,16 +29,14 @@ export function AppRouter() {
             />
           );
         })}
-      </Route>
 
-      <Route element={ <DefaultLayout /> } >
-        <Route
-          path={'*'}
+        <Route 
+          path="*" 
           element={
             <Suspense fallback={<PageLoader />}>
               <NotFound />
             </Suspense>
-          }
+          } 
         />
       </Route>
     </Routes>

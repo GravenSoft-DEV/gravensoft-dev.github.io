@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 interface ButtonSchema {
     href: string;
     children?: ReactNode;
-    classOverride?: string;
+    className?: string;
 }
 
-export default function Button({ children, href, classOverride = "" }: ButtonSchema) {
-    const className = `h-10 w-fit px-3 rounded-3xl flex flex-row items-center justify-center text-gray-950 bg-white cursor-pointer ${classOverride}`.trim();
+export default function Button({ children, href, className = "" }: ButtonSchema) {
+    const classOverride = `h-8 w-fit px-4 flex flex-row items-center justify-center cursor-pointer ${className}`.trim();
     const isInternal = href.startsWith("#") || href.startsWith("/");
 
     if (isInternal) {
         return (
-            <Link to={href} className={className}>
+            <Link to={href} className={classOverride}>
                 {children}
             </Link>
         );
     }
 
     return (
-        <a href={href} className={className}>
+        <a href={href} className={classOverride}>
             {children}
         </a>
     );

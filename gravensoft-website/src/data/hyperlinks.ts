@@ -3,14 +3,14 @@ import { Icons } from "../shared/Icons";
 export interface HyperlinkSchema {
     name: string;
     link: string;
+    isRoute: boolean;
     icon?: string;
-    isRoute?: boolean;
 }
 
 export const LEGAL: HyperlinkSchema[] = [
     {name: "Contact", link: "/contact", isRoute: true},
-    {name: "Privacy Policy", link: ""},
-    {name: "Terms of Service", link: ""},
+    {name: "Privacy Policy", link: "/privacy-policy", isRoute: true},
+    {name: "Terms of Service", link: "/terms-of-service", isRoute: true},
 ]
 
 export const NAVIGATE: HyperlinkSchema[] = [

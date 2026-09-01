@@ -15,6 +15,12 @@ export function CopyTextToClipboard(text: string) {
 	});
 }
 
+export function useDocumentTitle(title: string) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+}
+
 export function ScrollOnTop() {
 	const [isAtTop, setIsAtTop] = useState(true);
 

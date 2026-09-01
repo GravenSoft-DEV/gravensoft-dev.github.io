@@ -3,12 +3,15 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import Block from '../components/Block';
 import { BLOG_POSTS } from '../data/blogs';
+import { useDocumentTitle } from '../shared/Utils';
 
 export default function BlogPost() {
   const { slug } = useParams();
   const [content, setContent] = useState("");
   
   const postMeta = BLOG_POSTS.find(p => p.slug === slug);
+  
+  useDocumentTitle(postMeta ? `${postMeta.title} | GravenSoft` : "GravenSoft");
 
   useEffect(() => {
     if (postMeta) {
@@ -24,14 +27,13 @@ export default function BlogPost() {
   return (
     <main>
       <title>{postMeta.title} | GravenSoft</title>
-      <div className='h-16' />
-      <Block classOverride="bg-[rgba(19,13,28,1)] min-h-[100svh]">
+      <Block className="bg-[rgba(19,13,28,1)] min-h-svh">
         <article className="prose prose-invert lg:prose-xl max-w-4xl mx-auto w-full">
           <div className='my-10'>
             <Link to="/blogs">Back to Blog</Link>
           </div>
-          <h1>{postMeta.title}</h1>
-          <p className="text-gray-400">{postMeta.date}</p>
+          <h1 className='text-2xl font-bold'>{postMeta.title}</h1>
+          <p className="text-gray-400">Posted on {postMeta.date}</p>
           <hr className="border-gray-600 my-8" />
           <ReactMarkdown>{content}</ReactMarkdown>
         </article>

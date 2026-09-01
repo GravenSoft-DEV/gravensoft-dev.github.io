@@ -4,11 +4,10 @@ import { Footer, Header } from "./Bars";
 
 export default function DefaultLayout() {
     return (   
-        <div className="relative flex flex-col min-h-screen items-center justify-start bg-black text-gray-100 overflow-x-hidden scrollbar-none selection:bg-purple-300/30">
-
+        <div className="relative flex flex-col min-h-screen items-center justify-start bg-black text-gray-100 overflow-x-hidden scrollbar-none selection:bg-purple-300/50">
             <Header />
                 <PageWrapper>
-                    <Outlet/>
+                    <Outlet />
                 </PageWrapper>
             <Footer />
         </div>

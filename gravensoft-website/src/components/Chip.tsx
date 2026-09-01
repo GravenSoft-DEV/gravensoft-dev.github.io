@@ -11,14 +11,14 @@ type ChipColor = keyof typeof colorMap;
 
 interface ChipSchema {
     children?: ReactNode;
-    classOverride?: string;
+    className?: string;
     colorOverride?: ChipColor;
 }
 
-export default function Chip({children, classOverride, colorOverride = "gray"}: ChipSchema) {
+export default function Chip({children, className, colorOverride = "gray"}: ChipSchema) {
     const colorClass = colorMap[colorOverride] || colorMap.gray;
     return (
-        <div className={`border rounded-full flex justify-center w-fit px-2 pr-3 gap-2 ${colorClass} ${classOverride} items-center`}>
+        <div className={`border rounded-full flex justify-center w-fit px-2 pr-3 gap-2 ${colorClass} ${className} items-center`}>
             <div className={`border w-2 h-2 rounded-full ${colorClass}`}></div>
             {children}
         </div>

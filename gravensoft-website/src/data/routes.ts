@@ -4,6 +4,8 @@ const NotFound = lazy(() => import('../routes/404'));
 const Portfolio = lazy(() => import('../routes/Portfolio'));
 const Blog = lazy(() => import('../routes/Blog'));
 const BlogPost = lazy(() => import('../routes/BlogPost'));
+const PrivacyPolicy = lazy(() => import('../routes/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('../routes/TOS'));
 const Contact = lazy(() => import('../routes/Contact'));
 const Home = lazy(() => import('../routes/Home'));
 
@@ -20,6 +22,8 @@ export const ROUTES: RouteMeta[] = [
     {name: "Portfolio", path: "/portfolio", route: Portfolio},
     {name: "Blog", path: "/blogs", route: Blog},
     {name: "Blog Post", path: "/blogs/:slug", route: BlogPost},
+    {name: "Privacy Policy", path: "/privacy-policy", route: PrivacyPolicy},
+    {name: "Terms of Service", path: "/terms-of-service", route: TermsOfService},
     {name: "Page Not Found", path: "*", route: NotFound},
 ]
 

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Block from '../components/Block';
-import { HoverPanel } from '../components/Panel';
+import { HoverableElement, Panel } from '../components/Panel';
 import Chip from '../components/Chip';
 import { BLOG_POSTS } from '../data/blogs';
 
@@ -20,21 +20,19 @@ export default function Blog() {
 
   return (
     <main>
-      <title>Blog | GravenSoft</title>
-      <div className='h-16' />
-      <Block classOverride="bg-[rgba(19,13,28,1)] min-h-[100svh]">
+      <Block className="bg-[rgba(19,13,28,1)] min-h-[100svh]">
         <h1 className="text-4xl font-bold mb-6 text-white">Latest Posts</h1>
         
         <div className="flex flex-wrap gap-3 w-full max-w-3xl">
           <p className='font-bold'>Tags:</p>
           <button onClick={() => setActiveFilter(null)}>
-             <Chip classOverride='transition-all duration-75' colorOverride={activeFilter === null ? 'green' : 'gray'}>
+             <Chip className='transition-all duration-75' colorOverride={activeFilter === null ? 'green' : 'gray'}>
                All
              </Chip>
           </button>
           {availableTags.map(tag => (
             <button key={tag} onClick={() => setActiveFilter(tag)}>
-              <Chip classOverride='transition-all duration-75' colorOverride={activeFilter === tag ? 'green' : 'gray'}>
+              <Chip className='transition-all duration-75' colorOverride={activeFilter === tag ? 'green' : 'gray'}>
                 {tag}
               </Chip>
             </button>
@@ -50,17 +48,21 @@ export default function Blog() {
               to={`/blogs/${post.slug}`}
               className="grow w-[calc(50%-1rem)] min-w-70" 
             >
-              <HoverPanel classOverride="w-full h-full min-h-32 bg-gray-800 p-6 text-left" translate={true}>
-                <h2 className="text-2xl font-bold4 text-purple-300">{post.title}</h2>
-                <p className="text-sm text-gray-400 mb-4">{post.date}</p>
-                <p className="text-gray-200 mb-4">{post.excerpt}</p>
-                
-                <div className="flex gap-2">
-                  {post.tags.map(tag => (
-                    <Chip key={tag} colorOverride="gray">{tag}</Chip>
-                  ))}
-                </div>
-              </HoverPanel>
+              <HoverableElement>
+                {(hoverClasses) => (
+                <Panel className={`w-full h-full min-h-32 bg-gray-800 p-6 text-left ${hoverClasses}`}>
+                  <h2 className="text-2xl font-bold4 text-purple-300">{post.title}</h2>
+                  <p className="text-sm text-gray-400 mb-4">{post.date}</p>
+                  <p className="text-gray-200 mb-4">{post.excerpt}</p>
+                  
+                  <div className="flex gap-2">
+                    {post.tags.map(tag => (
+                      <Chip key={tag} colorOverride="gray">{tag}</Chip>
+                    ))}
+                  </div>
+                </Panel>
+                )}
+              </HoverableElement>
             </Link>
           ))}
           {filteredPosts.length === 0 && (
