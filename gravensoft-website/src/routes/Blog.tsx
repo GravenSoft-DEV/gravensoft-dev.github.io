@@ -54,12 +54,12 @@ export default function Blog() {
               className="grow w-[calc(50%-1rem)] min-w-70" 
             >
               <HoverableElement
-                translateOverride='hover:translate-x-4 transition-all duration-75'
+                translate={false}
                 highlight={true}
-                highlightOverride='hover:border-white'
+                highlightOverride='hover:border-white hover:bg-zinc-700/50'
                 >
                 {(hoverClasses) => (
-                <Panel className={`border border-zinc-600 w-full h-full min-h-32 bg-zinc-800/50 text-left ${hoverClasses} flex flex-row justify-between`}>
+                <Panel className={`group border border-zinc-600 w-full h-full min-h-32 bg-zinc-800/50 text-left ${hoverClasses} flex flex-row justify-between`}>
                   <div className='p-6'>
                     <h2 className="text-2xl font-bold text-zinc-100">{post.title}</h2>
                     <p className="text-sm italic text-zinc-400 mb-4">{post.date}</p>
@@ -70,7 +70,9 @@ export default function Blog() {
                       ))}
                     </div>
                   </div>
-                  <img className="w-full max-w-xs aspect-video object-cover rounded-2xl" src={post.thumbnail}></img>
+                  <div className="w-full max-w-xs aspect-video overflow-hidden rounded-2xl">
+                    <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125" src={post.thumbnail}></img>
+                  </div>
                 </Panel>
                 )}
               </HoverableElement>
