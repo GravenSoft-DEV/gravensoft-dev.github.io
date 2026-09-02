@@ -8,7 +8,7 @@ interface CarouselProps {
 export default function ResponsivePanelLayout({ items }: CarouselProps) {
   return (
     <>
-      <div className="xl:hidden relative mx-4">
+      <div className="xl:hidden relative mx-4 w-svw left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
         <Carousel>
           <CarouselContent className="py-4">
             {items.map((element, index) => (
