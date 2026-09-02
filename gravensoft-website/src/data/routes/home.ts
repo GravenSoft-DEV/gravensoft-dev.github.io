@@ -1,6 +1,6 @@
 export const HOME = {
     heroTitle: `Engineering experiences that leave a mark`,
-    heroSubtitle: `in your hearts? Maybe. Here at GravenSoft, our team is committed to delivering you quality software solutions that scale.`,
+    heroSubtitle: `Here at GravenSoft, our team is committed to delivering you quality software solutions that scale.`,
     testTitle: `Lorem Ipsum`,
     testTest: `dolor sit amet, consectetur adipiscing elit. Quisque vel magna nec nulla sollicitudin consectetur.
     Donec non nisl ex. Sed sit amet libero sollicitudin, sodales orci sed, malesuada eros.Fusce nibh sapien, tincidunt

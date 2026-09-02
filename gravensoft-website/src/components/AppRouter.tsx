@@ -1,10 +1,9 @@
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PageLoader } from './PageLoader';
 import { ROUTES, type RouteMeta } from '../data/routes';
 import DefaultLayout from './DefaultLayout';
-
-const NotFound = lazy(() => import('../routes/404'));
+import { NotFound } from '../data/routes';
 
 export function AppRouter() {
   return (

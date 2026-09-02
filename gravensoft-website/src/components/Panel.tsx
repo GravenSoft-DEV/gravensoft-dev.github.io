@@ -6,13 +6,20 @@ interface PanelProps {
     className?: string;
 }
 
+interface HoverablePropsLegacy {
+    translate?: boolean;
+    highlight?: boolean;
+    translateOverride?: string;
+    highlightOverride?: string;
+}
+
 interface HoverableProps {
     translate?: boolean;
     highlight?: boolean;
     translateOverride?: string;
     highlightOverride?: string;
     className?: string;
-    children: (injectedClasses: string) => JSX.Element;
+    children: (injectedClasses: string) => JSX.Element | any;
 }
 
 export function Panel({children, className='min-h-50 bg-zinc-400'}: PanelProps) {
@@ -23,7 +30,7 @@ export function Panel({children, className='min-h-50 bg-zinc-400'}: PanelProps) 
   );
 }
 
-export function HoverPanel({ ...props }: PanelProps & HoverableProps) {
+export function HoverPanel({ ...props }: PanelProps & HoverablePropsLegacy) {
   const { children, className } = props;
   const { translate, highlight, translateOverride = 'hover:-translate-y-4', highlightOverride } = props;
 
