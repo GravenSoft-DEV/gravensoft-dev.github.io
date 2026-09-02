@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex flex-wrap mt-16 gap-4 w-full justify-center md:justify-start">
             <div className="z-10 group relative transition-transform origin-center hover:scale-95 w-full sm:w-fit rounded-xl">
               <GlowEffect
-                className="absolute inset-0 group-hover:hidden pointer-events-none z-0"
+                className={`absolute inset-0 group-hover:hidden pointer-events-none z-0`}
                 colors={['#FF5733', '#33FF57', '#3357FF', '#F1C40F']}
                 mode="colorShift"
                 blur="soft"

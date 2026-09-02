@@ -18,9 +18,9 @@ const Colors = {
     tiktok: "border-cyan-500/80 hover:border-rose-500 bg-linear-to-b from-slate-900/60 to-cyan-950/50 hover:from-rose-500/30 hover:to-cyan-500/30 hover:drop-shadow-[0_0_8px_rgba(254,44,85,0.5)]",
     twitter: "border-neutral-700/80 hover:border-neutral-200 bg-linear-to-b from-neutral-900/50 to-neutral-800/40 hover:from-neutral-700/50 hover:to-neutral-900/30 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]",
 
-    textAccent: "text-[#39FF14]",
-    textAccentHover: "hover:text-yellow-400",
-    textMutedNav: "text-slate-400",
+    textAccent: "text-zinc-200",
+    textAccentHover: "focus-visible:text-white hover:text-white",
+    textMutedNav: "text-zinc-400",
     textBody: "text-zinc-200",
 
     indicatorPulseGreen: "bg-[#27e844] animate-pulse shadow-[0_0_10px_rgba(57,255,20,1)]",

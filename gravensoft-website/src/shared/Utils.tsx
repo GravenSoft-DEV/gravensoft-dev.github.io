@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 //import { useInView } from 'motion/react';
 import { useLocation } from 'react-router-dom';
 
-export function IsRouteActive(path: string) {
+export function useIsRouteActive(path: string) {
 	const location = useLocation();
 	return location.pathname === path;
 }
@@ -21,7 +21,7 @@ export function useDocumentTitle(title: string) {
   }, [title]);
 }
 
-export function ScrollOnTop() {
+export function useScrollOnTop() {
 	const [isAtTop, setIsAtTop] = useState(true);
 
 	useEffect(() => {
