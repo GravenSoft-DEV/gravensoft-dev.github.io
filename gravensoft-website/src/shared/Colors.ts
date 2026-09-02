@@ -20,7 +20,7 @@ const Colors = {
 
     textAccent: "text-zinc-200",
     textAccentHover: "focus-visible:text-white hover:text-white",
-    textMutedNav: "text-zinc-400",
+    textMutedNav: "text-zinc-600",
     textBody: "text-zinc-200",
 
     indicatorPulseGreen: "bg-[#27e844] animate-pulse shadow-[0_0_10px_rgba(57,255,20,1)]",

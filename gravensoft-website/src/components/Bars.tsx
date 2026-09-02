@@ -36,7 +36,7 @@ export function Header() {
       <header className={`transition-all w-full h-16 fixed z-1 top-0 left-0 justify-center items-center flex text-zinc-100 ${ !useBg ? alwaysVisible : `${alwaysVisible} sm:backdrop-blur-none sm:bg-zinc-950/0 sm:border-0 sm:border-zinc-700/0` }`}>
         <div className="w-full py-8 flex justify-between items-center px-8 xl:px-0 md:max-w-6xl">
           <p className="font-bold">GravenSoft</p>
-          <nav className={`hidden sm:flex flex-row gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
+          <nav className={`drop-shadow-black/35 drop-shadow-lg hidden sm:flex flex-row gap-12 text-sm font-medium ${Colors.textMutedNav}`}>
             {
               HEADERROUTES.map((route, index) => (
                 <Tab key={route.path || `route-${index}`} path={route.path}>{`${route.name}`}</Tab>
