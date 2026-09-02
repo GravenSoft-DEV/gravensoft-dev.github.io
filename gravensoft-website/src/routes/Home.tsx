@@ -9,15 +9,15 @@ import Button from "../components/Buttons";
 import Hero from "../components/Hero";
 import { useDocumentTitle } from "../shared/Utils";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
-import Carousel from "@/components/Carousel";
-import type { JSX } from "react";
+//import Carousel from "@/components/Carousel";
+//import type { JSX } from "react";
 const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
-const panels:JSX.Element[] = [
-  <HoverPanel className="w-xs not-xl:order-1 transition-all min-w-xs min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>,
-  <HoverPanel className="w-xs not-xl:order-3 transition-all min-w-xs min-h-110 bg-linear-to-br border border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-yellow-200/50 md:hover:shadow-xl md:hover:from-yellow-800/50 to-75% md:hover:to-yellow-200/50"></HoverPanel>,
-  <HoverPanel className="w-xs not-xl:order-2 transition-all min-w-xs min-h-100 bg-linear-to-br border border-red-500 from-red-800/50 to-75% to-red-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-red-300/50 md:hover:shadow-xl md:hover:from-red-800/50 to-75% md:hover:to-red-300/50"></HoverPanel>
-]
+//const panels:JSX.Element[] = [
+//  <HoverPanel className="w-xs order-1 transition-all min-w-xs min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>,
+//  <HoverPanel className="w-xs order-3 transition-all min-w-xs min-h-100 bg-linear-to-br border border-red-500 from-red-800/50 to-75% to-red-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-red-300/50 md:hover:shadow-xl md:hover:from-red-800/50 to-75% md:hover:to-red-300/50"></HoverPanel>,
+//  <HoverPanel className="w-xs order-2 transition-all min-w-xs min-h-100 xl:min-h-110 bg-linear-to-br border border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-yellow-200/50 md:hover:shadow-xl md:hover:from-yellow-800/50 to-75% md:hover:to-yellow-200/50"></HoverPanel>,
+//]
 
 export default function Home() {
   useDocumentTitle(`Home | GravenSoft`);
@@ -100,8 +100,12 @@ export default function Home() {
         </div>
       </Block>
       <Block className={`bg-zinc-900`}>
-        <Carousel items={panels} />
-      </Block>
+        <div className="flex flex-col xl:flex-row w-full gap-8 justify-center items-center">
+          <HoverPanel className="w-full xl:w-xs xl:order-2 mx-8 xl:mx-auto transition-all min-h-100 xl:min-h-110 bg-linear-to-br border border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-yellow-200/50 md:hover:shadow-xl md:hover:from-yellow-800/50 to-75% md:hover:to-yellow-200/50"></HoverPanel>
+          <HoverPanel className="w-full xl:w-xs xl:order-3 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-red-500 from-red-800/50 to-75% to-red-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-red-300/50 md:hover:shadow-xl md:hover:from-red-800/50 to-75% md:hover:to-red-300/50"></HoverPanel>
+          <HoverPanel className="w-full xl:w-xs xl:order-1 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>
+        </div>
+              </Block>
       <Block className={`bg-zinc-950`}>
         <div className="relative w-screen left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
           <Marquee pauseOnHover={true} className="w-full">

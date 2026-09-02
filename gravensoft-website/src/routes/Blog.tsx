@@ -59,8 +59,8 @@ export default function Blog() {
                 highlightOverride='hover:border-white hover:bg-zinc-700/50'
                 >
                 {(hoverClasses) => (
-                <Panel className={`group border border-zinc-600 w-full h-full min-h-32 bg-zinc-800/50 text-left ${hoverClasses} flex flex-row justify-between`}>
-                  <div className='p-6'>
+                <Panel className={`group border border-zinc-600 w-full h-full min-h-32 bg-zinc-800/50 text-left ${hoverClasses} flex flex-col sm:flex-row justify-between`}>
+                  <div className='p-6 pr-8'>
                     <h2 className="text-2xl font-bold text-zinc-100">{post.title}</h2>
                     <p className="text-sm italic text-zinc-400 mb-4">{post.date}</p>
                     <p className="text-zinc-200 mb-4">{post.excerpt}</p>
@@ -70,7 +70,7 @@ export default function Blog() {
                       ))}
                     </div>
                   </div>
-                  <div className="w-full max-w-xs aspect-video overflow-hidden rounded-2xl">
+                  <div className="sm:w-[45%] m-4 sm:max-w-xs aspect-video overflow-hidden rounded-2xl self-center">
                     <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-125" src={post.thumbnail}></img>
                   </div>
                 </Panel>

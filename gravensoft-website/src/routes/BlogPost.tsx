@@ -27,12 +27,12 @@ export default function BlogPost() {
   return (
     <main>
       <Block className="bg-zinc-950 min-h-svh flex justify-center items-center py-0">
-        <div className='border h-full mt-16 py-16 border-zinc-800'>
+        <div className='lg:border h-full mt-16 lg:py-16 border-zinc-800'>
           <article className="prose prose-invert lg:prose-xl max-w-4xl mx-auto w-full">
             <div className='mb-8'>
               <Link to="/blogs">Back to Blog</Link>
             </div>
-            <h1 className='text-2xl font-bold'>{postMeta.title}</h1>
+            <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold'>{postMeta.title}</h1>
             <p className="text-zinc-400 mb-4"><i>Posted on {postMeta.date}</i></p>
 
             <p className='text-zinc-400 italic'>{postMeta.tags.length > 1 ? "Tags" : "Tag"}: { postMeta.tags.join(', ') }</p>

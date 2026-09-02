@@ -8,13 +8,13 @@ interface CarouselProps {
 export default function ResponsivePanelLayout({ items }: CarouselProps) {
   return (
     <>
-      <div className="xl:hidden relative mx-4 w-svw left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
+      <div className="xl:hidden relative mx-4">
         <Carousel>
-          <CarouselContent className="py-4">
+          <CarouselContent>
             {items.map((element, index) => (
               <CarouselItem 
                 key={React.isValidElement(element) && element.key ? element.key : index} 
-                className="flex justify-center"
+                className="flex justify-center pb-12"
               >
                 {element}
               </CarouselItem>
@@ -25,10 +25,10 @@ export default function ResponsivePanelLayout({ items }: CarouselProps) {
       </div>
 
       <div className="hidden xl:flex flex-wrap xl:flex-row gap-8 justify-center items-center">
-        {items.map((element, index) => (
-          <div key={React.isValidElement(element) && element.key ? element.key : index}>
+        {items.map((element) => (
+          <>
             {element}
-          </div>
+          </>
         ))}
       </div>
     </>
