@@ -24,7 +24,7 @@ interface HoverableProps {
 
 export function Panel({children, className='min-h-50 bg-zinc-400'}: PanelProps) {
   return (
-    <div className={`rounded-2xl ${className}`}>
+    <div className={`rounded-2xl ${className} mx-auto my-auto`}>
       {children}
     </div>
   );

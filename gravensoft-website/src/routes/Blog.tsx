@@ -51,7 +51,7 @@ export default function Blog() {
             <Link 
               key={post.slug} 
               to={`/blogs/${post.slug}`}
-              className="grow w-[calc(50%-1rem)] min-w-70" 
+              className="grow w-[calc(50%-1rem)]" 
             >
               <HoverableElement
                 translate={false}

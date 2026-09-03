@@ -1,7 +1,7 @@
 import Block from "../components/Block";
 import { HoverPanel, Panel } from "../components/Panel";
 import VideoPlayer from "../components/VideoPlayer";
-import { HOME } from "../data/routes/home"
+import { HOME } from "../data/routes-content/home"
 import badApple from '../assets/background.mp4'
 import Chip from "../components/Chip";
 import MarqueeModule from "react-fast-marquee";
@@ -58,7 +58,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-8 mb-8">
           <p>{HOME.testTest}</p>
           <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
-        </div>
+        </div> 
         <div className="flex flex-row gap-4">
           <Chip colorOverride={'red'}>Test</Chip>
           <Chip colorOverride={'blue'}>Test</Chip>
@@ -92,7 +92,6 @@ export default function Home() {
           <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
         </div>
         <div className="flex flex-col sm:flex-row gap-8">
-          <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
           <div className="flex flex-col gap-8">
             <h1 className="text-4xl font-bold">{HOME.testTitle}</h1>
             <p>{HOME.testTest}</p>
@@ -105,15 +104,14 @@ export default function Home() {
           <HoverPanel className="w-full xl:w-xs xl:order-3 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-red-500 from-red-800/50 to-75% to-red-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-red-300/50 md:hover:shadow-xl md:hover:from-red-800/50 to-75% md:hover:to-red-300/50"></HoverPanel>
           <HoverPanel className="w-full xl:w-xs xl:order-1 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>
         </div>
-              </Block>
+      </Block>
       <Block className={`bg-zinc-950`}>
         <div className="relative w-screen left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
-          <Marquee pauseOnHover={true} className="w-full">
-            <div className="flex">
-              <Panel className="h-100 w-180 bg-zinc-400 mx-2">Hey hey</Panel>
-              <Panel className="h-100 w-180 bg-zinc-400 mx-2">Hey hey</Panel>
-              <Panel className="h-100 w-180 bg-zinc-400 mx-2">Hey hey</Panel>
-            </div>
+          <Marquee pauseOnHover={true} className="w-full flex justify-between">
+            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
+            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
+            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
+            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
           </Marquee>
         </div>
       </Block>
