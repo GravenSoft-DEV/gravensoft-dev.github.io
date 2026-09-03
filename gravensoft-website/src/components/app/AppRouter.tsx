@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PageLoader } from './PageLoader';
-import { ROUTES, type RouteMeta } from '../data/routes';
-import DefaultLayout from './DefaultLayout';
-import { NotFound } from '../data/routes';
+import { ROUTES, type RouteMeta } from '@/data/routes';
+import DefaultLayout from '@/components/layouts/DefaultLayout';
+import { NotFound } from '@/data/routes';
 
 export function AppRouter() {
   return (
