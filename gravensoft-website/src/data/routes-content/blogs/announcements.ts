@@ -1,5 +1,5 @@
-import { type BlogMeta } from '../blogs';
-import test from '../../assets/background.webp';
+import { type BlogMeta } from '@/data/routes-content/blogs';
+import test from '@/assets/background.webp';
 
 export const announcementPosts: BlogMeta[] = [
   {

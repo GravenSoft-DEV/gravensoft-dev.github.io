@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import Block from '../components/Block';
-import { BLOG_POSTS } from '../data/blogs';
+import { BLOG_POSTS } from '../data/routes-content/blogs';
 import { useDocumentTitle } from '../shared/Utils';
 
 export default function BlogPost() {

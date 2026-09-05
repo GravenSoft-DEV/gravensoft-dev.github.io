@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { PageLoader } from './PageLoader';
 import { ROUTES, type RouteMeta } from '@/data/routes';
-import DefaultLayout from '@/components/layouts/DefaultLayout';
+import DefaultLayout from '@/components/app/layouts/DefaultLayout';
 import { NotFound } from '@/data/routes';
 
 export function AppRouter() {

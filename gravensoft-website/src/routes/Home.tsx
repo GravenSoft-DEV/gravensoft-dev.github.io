@@ -1,17 +1,13 @@
-import Block from "../components/Block";
-import { HoverPanel, Panel } from "../components/Panel";
+import { Section } from "../components/Block";
 import VideoPlayer from "../components/VideoPlayer";
-import { HOME } from "../data/routes-content/home"
+import { HOME, SECTIONS } from "../data/routes-content/home"
 import badApple from '../assets/background.mp4'
-import Chip from "../components/Chip";
-import MarqueeModule from "react-fast-marquee";
 import Button from "../components/Buttons";
 import Hero from "../components/Hero";
 import { useDocumentTitle } from "../shared/Utils";
 import { GlowEffect } from "@/components/motion-primitives/glow-effect";
 //import Carousel from "@/components/Carousel";
 //import type { JSX } from "react";
-const Marquee = (MarqueeModule as any).default || MarqueeModule;
 
 //const panels:JSX.Element[] = [
 //  <HoverPanel className="w-xs order-1 transition-all min-w-xs min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>,
@@ -53,68 +49,18 @@ export default function Home() {
           </div>
         </div>
       </Hero>
-      <Block className={`bg-zinc-950`}>
-        <h1 className="text-4xl font-bold mb-8">{HOME.testTitle}</h1>
-        <div className="flex flex-col sm:flex-row gap-8 mb-8">
-          <p>{HOME.testTest}</p>
-          <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
-        </div> 
-        <div className="flex flex-row gap-4">
-          <Chip colorOverride={'red'}>Test</Chip>
-          <Chip colorOverride={'blue'}>Test</Chip>
-          <Chip colorOverride={'green'}>Test</Chip>
-          <Chip colorOverride={'gray'}>Test</Chip>
-        </div>
-      </Block>
-      <Block className={`bg-zinc-950`}>
-        <h1 className="text-4xl font-bold mb-8">{HOME.testTitle}</h1>
-        <div className="flex flex-col sm:flex-row gap-8">
-          <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
-          <p>
-              {HOME.testTest}
-          </p>
-        </div>
-      </Block>
-      <Block className={`bg-zinc-900`}>
-        <h1 className="text-4xl font-bold mb-8 text-center">{HOME.testTitle}</h1>
-        <div className="flex flex-row gap-16">
-          <p style={{ textAlign: "center" }}>
-              {HOME.testTest}
-          </p>
-        </div>
-      </Block>
-      <Block className={`bg-zinc-950 flex`}>
-        <div className="flex flex-col sm:flex-row gap-8 mb-24">
-          <div className="flex flex-col gap-8">
-            <h1 className="text-4xl font-bold">{HOME.testTitle}</h1>
-            <p>{HOME.testTest}</p>
-          </div>
-          <Panel>KALDHWKJDHLWADHKJADHJHjkd</Panel>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-8">
-          <div className="flex flex-col gap-8">
-            <h1 className="text-4xl font-bold">{HOME.testTitle}</h1>
-            <p>{HOME.testTest}</p>
-          </div>
-        </div>
-      </Block>
-      <Block className={`bg-zinc-900`}>
-        <div className="flex flex-col xl:flex-row w-full gap-8 justify-center items-center">
-          <HoverPanel className="w-full xl:w-xs xl:order-2 mx-8 xl:mx-auto transition-all min-h-100 xl:min-h-110 bg-linear-to-br border border-yellow-500 from-yellow-800/50 to-75% to-yellow-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-yellow-200/50 md:hover:shadow-xl md:hover:from-yellow-800/50 to-75% md:hover:to-yellow-200/50"></HoverPanel>
-          <HoverPanel className="w-full xl:w-xs xl:order-3 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-red-500 from-red-800/50 to-75% to-red-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-red-300/50 md:hover:shadow-xl md:hover:from-red-800/50 to-75% md:hover:to-red-300/50"></HoverPanel>
-          <HoverPanel className="w-full xl:w-xs xl:order-1 mx-8 xl:mx-auto transition-all min-h-100 bg-linear-to-br border border-green-500 from-green-800/50 to-75% to-green-400/50" translate={false} highlight={true} highlightOverride="md:hover:shadow-green-300/50 md:hover:shadow-xl md:hover:from-green-800/50 to-75% md:hover:to-green-300/50"></HoverPanel>
-        </div>
-      </Block>
-      <Block className={`bg-zinc-950`}>
-        <div className="relative w-screen left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
-          <Marquee pauseOnHover={true} className="w-full flex justify-between">
-            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
-            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
-            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
-            <Panel className="h-100 w-lg bg-zinc-400 scale-96">Hey hey</Panel>
-          </Marquee>
-        </div>
-      </Block>
+      {
+        SECTIONS.map((section) => (
+          <Section
+            bgColor={section.bgColor}
+            title={section.title}
+            text={section.text}
+            itemsInside={section.itemsInside}
+            itemsOutside={section.itemsOutside}
+            center={section.center}
+            reverse={section.reverse} />
+        ))
+      }
     </main>
   );
 }

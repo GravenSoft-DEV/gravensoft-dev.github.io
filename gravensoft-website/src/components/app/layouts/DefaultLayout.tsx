@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import PageWrapper from "@/components/app/PageWrapper";
-import { Footer, Header } from "../Bars";
+import { Header } from "../../Header";
+import { Footer } from "../../Footer";
 
 export default function DefaultLayout() {
     return (   
-        <div className="relative flex flex-col min-h-screen items-center justify-start bg-black text-zinc-100 overflow-x-hidden scrollbar-none selection:bg-purple-300/50">
+        <div className="relative flex flex-col min-h-screen items-center justify-start bg-black text-zinc-100 overflow-x-hidden scrollbar-none selection:bg-gray-600/50">
             <Header />
                 <PageWrapper>
                     <Outlet />

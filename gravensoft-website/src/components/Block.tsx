@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Panel } from "./Panel";
 
 interface BlockProps {
     children?: ReactNode;
@@ -17,41 +16,56 @@ export default function Block({id, children, className, borderVisible = true}: B
     );
 }
 
-interface SectionProps {
+export interface SectionProps {
     title?: string;
     text?: string;
+    bgColor?: string;
+    center?: boolean;
     reverse?: boolean;
-    usePanel?: boolean;
-    panels?: typeof Panel[];
+    itemsOutside?: ReactNode[];
+    itemsInside?: ReactNode[];
 }
 
 export function Section(props: SectionProps) {
     const {
         title,
         text,
-        reverse,
-        usePanel,
-        panels
+        bgColor = "bg-zinc-950",
+        center = false,
+        reverse = false,
+        itemsOutside,
+        itemsInside
     } = props;
     
     return (
-        <Block className="bg-zinc-950">
-        <div className={`flex flex-col sm:flex-row gap-8 ${reverse ? 'sm:flex-row-reverse' : ''}`}>
-            <div className="flex flex-col gap-8 flex-1">
-                <h1 className="text-4xl font-bold">{title}</h1>
-                <p>{text}</p>
+        <Block className={` ${bgColor}`}>
+        <div className={`flex flex-wrap gap-8 ${reverse ? 'sm:flex-row-reverse' : 'sm:flex-row'} w-fit sm:w-full`}>
+            <div className={`flex flex-col gap-8 ${!itemsOutside ? 'w-full' : 'w-full lg:w-fit'}`}>
+                { title ? <h1 className={`text-4xl font-bold ${center ? 'text-center' : ''}`}>{title}</h1> : null }
+                { text ? <p className={`${center ? 'text-center' : ''}`}>{text}</p> : null }
+                {
+                    itemsInside ?
+                    <div className={`flex flex-col gap-8 w-full`}>
+                    {
+                        itemsInside?.map((element) => (
+                            <>{element}</>
+                        ))
+                    }
+                    </div> :
+                    null
+                }
             </div>
-            <div className="flex flex-col gap-4">
             {
-                usePanel ?
-                panels?.map((element) => (
-                    <>
-                        {element}
-                    </>
-                )) :
+                itemsOutside ?
+                <div className="flex flex-wrap lg:flex-col gap-8 w-full lg:w-fit sm:mx-auto">
+                {
+                    itemsOutside?.map((element) => (
+                        <>{element}</>
+                    ))
+                }
+                </div> :
                 null
             }
-            </div>
         </div>
         </Block>
     );

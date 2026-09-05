@@ -17,3 +17,31 @@ body::-webkit-scrollbar,
 *::-webkit-scrollbar {
   display: none !important;
 }
+
+@theme {
+  --font-bulletin: 'Bulletin', sans-serif;
+  --font-cosmic: 'CosmicSuperHuman', sans-serif;
+  --font-kunstraub: 'Kunstraub', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+@font-face {
+  font-family: 'Bulletin';
+  src: url('../fonts/BulletinGothic.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CosmicSuperHuman';
+  src: url('../fonts/CosmicSuperHuman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kunstraub';
+  src: url('../fonts/Kunstraub.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

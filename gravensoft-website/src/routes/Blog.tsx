@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Block from '../components/Block';
 import { HoverableElement, Panel } from '../components/Panel';
 import Chip from '../components/Chip';
-import { BLOG_POSTS } from '../data/blogs';
+import { BLOG_POSTS } from '../data/routes-content/blogs';
 import { useDocumentTitle } from '../shared/Utils';
 
 export default function Blog() {
